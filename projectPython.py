@@ -505,8 +505,18 @@ def populateMovie(_conn):
     insertMovie(_conn, "The Hunchback of Notre Dame", "Drama", 199, )
     insertMovie(_conn, "The Batman", "Hero", 20, )
     insertMovie(_conn, "Tron", "Science Fiction", 19, )
-    insertMovie(_conn, "Dr Strangelove", "Horror", 19, )   
+    insertMovie(_conn, "Dr Strangelove", "Satire", 19, )   
     insertMovie(_conn, "Max Dugan Returns", "Drama", 19, ) 
+    insertMovie(_conn, "The Hunger Games", "", 201, )
+    insertMovie(_conn, "Raiders of the Lost Ark", "Adventure", 19, )
+    insertMovie(_conn, "Batteries Not Included", "", 19, )
+    insertMovie(_conn, "Beauty and the Beast", "", 19, )
+    insertMovie(_conn, "Duel", "", 19)
+    insertMovie(_conn, "Fear and Desire", "", 19)
+    insertMovie(_conn, "Ironweed", "", 19, )
+    insertMovie(_conn, "Nijinsky", "", 19, )
+    insertMovie(_conn, "Moonlighting", "", 19, )
+    insertMovie(_conn, "Diamond Head", "", 19, )
     
     
     print("++++++++++++++++++++++++++++++++++")
@@ -614,24 +624,23 @@ def populateYear(_conn):
 
 def trial1(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Genres with films with less than a billion in revenue: ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select genre
+                from movie
+                where revenue<1000000000"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("genre")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
