@@ -367,6 +367,8 @@ def populateActor(_conn):
     insertActor(_conn, "Jackie Chan", 19)
     insertActor(_conn, "Jack Black", 19)
     insertActor(_conn, "Ralph Fiennes", 19)
+    insertActor(_conn, "Liam Neeson", 19)
+    insertActor(_conn, "Ben Kingsley", 19)
     
     print("++++++++++++++++++++++++++++++++++")
         
@@ -487,7 +489,7 @@ def populateMovie(_conn):
     insertMovie(_conn, "The Amazing Spider Man", "Hero", 20)
     insertMovie(_conn, "Spider-Man", "Hero", 20)
     insertMovie(_conn, "Jurassic Park", "Science Fiction", 1993, 1057000000, "Steven Spielberg", NULL, NULL, NULL, NULL, "Kathleen Kennedy", "Gerald Molen", NULL, NULL, NULL, "")
-    insertMovie(_conn, "Schindler's List", "Drama", 19, NULL, "Steven Spielberg")
+    insertMovie(_conn, "Schindler's List", "Drama", 1993, 322200000, "Steven Spielberg", NULL, NULL, NULL, NULL, "Steven Spielberg", "Gerald Molen", "Branko Lustig", NULL, NULL, "Liam Neeson", "Ralph Fiennes", "Ben Kingsley", NULL, NULL, "John Williams", NULL, "Universal Pictures", NULL, 6)
     insertMovie(_conn, "The Land Before Time", "Drama", 19, "Steven Spielberg", "George Lucas", "Don Bluth")
     insertMovie(_conn, "The Prince of Egypt", "Drama", 19, )
     insertMovie(_conn, "Infinity War", "Hero", 20)
@@ -605,7 +607,527 @@ def populateYear(_conn):
 
 #Example Route
 
-def pcsByMaker(_conn):
+def trial1(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial2(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial3(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial4(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial5(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial6(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial7(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial8(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial17(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial9(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial10(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial11(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial12(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial13(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial14(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial15(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial16(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial17(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial18(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial19(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("PCs by maker: ")
+
+    try:
+        sql = """select P.model as model, PC.price as price
+                from Product P, PC
+                where P.model = PC.model AND
+                maker = 'E'"""
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10}'.format("model", "price")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10}'.format(row[0], row[1])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+def trial20(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("PCs by maker: ")
 
