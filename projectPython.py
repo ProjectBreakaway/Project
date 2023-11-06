@@ -246,7 +246,7 @@ def populateUser(_conn):
     
 def insertReview(_conn, _reviewKey, _movieTitle):
     print("++++++++++++++++++++++++++++++++++")
-    print("Insert User")
+    print("Insert Review")
     try: 
         sql = "INSERT INTO review VALUES(?, ?)"
         args = [_reviewKey, _movieTitle]
@@ -265,28 +265,25 @@ def populateReview(_conn):
     print("Populate Review")
     
     insertReview(_conn, 1, "The Lion King")
-    insertReview(_conn, 2, "Sorceror's Stone")
-    insertReview(_conn, 3, "Amazing Spider Man")
-    insertReview(_conn, 4, "Spider-Man")
-    insertReview(_conn, 5, "Jurassic Park")
-    insertReview(_conn, 6, "Schindler's List")
-    insertReview(_conn, 7, "The Land Before Time")
-    insertReview(_conn, 8, "The Prince of Egypt")
-    insertReview(_conn, 13, "The Hunchback of Notre Dame")
-    insertReview(_conn, 14, "The Batman")
-    insertReview(_conn, 15, "The Hunger Games")
-    insertReview(_conn, 16, "Tron")
-    insertReview(_conn, 17, "Raiders of the Lost Ark")
-    insertReview(_conn, 18, "Batteries Not Included")
-    insertReview(_conn, 19, "Beauty and the Beast")
-    insertReview(_conn, 20, "Duel")
-    insertReview(_conn, 21, "Fear and Desire")
-    insertReview(_conn, 22, "Dr Strangelove")
-    insertReview(_conn, 23, "Max Dugan Returns")
-    insertReview(_conn, 24, "Ironweed")
-    insertReview(_conn, 25, "Nijinsky")
-    insertReview(_conn, 26, "Moonlighting")
-    insertReview(_conn, 27, "Diamond Head")
+    insertReview(_conn, 2, "If")
+    insertReview(_conn, 3, "Schindler's List")
+    insertReview(_conn, 4, "Horizons West")
+    insertReview(_conn, 5, "Sorcerer's Stone")
+    insertReview(_conn, 6, "The Hunchback of Notre Dame")
+    insertReview(_conn, 7, "Tron")
+    insertReview(_conn, 8, "Raiders of the Lost Ark")
+    insertReview(_conn, 9, "Batteries Not Included")
+    insertReview(_conn, 10, "Beauty and the Beast")
+    insertReview(_conn, 11, "Duel")
+    insertReview(_conn, 12, "Fear and Desire")
+    insertReview(_conn, 13, "Dr Strangelove")
+    insertReview(_conn, 14, "Max Dugan Returns")
+    insertReview(_conn, 15, "Ironweed")
+    insertReview(_conn, 16, "Nijinsky")
+    insertReview(_conn, 17, "Moonlighting")
+    insertReview(_conn, 18, "Diamond Head")
+    insertReview(_conn, 19, "A Clockwork Orange")
+    insertReview(_conn, 20, "The Prince of Egypt")
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -313,9 +310,28 @@ def populateProducer(_conn):
     insertProducer(_conn, "Kathleen Kennedy", 1953, "Raiders of the Lost Ark")
     insertProducer(_conn, "Gerald Molen", 1935, "Batteries Not Included")
     insertProducer(_conn, "Don Haln", 1955, "Beauty and the Beast")
-    insertProducer(_conn, "David Hayman", 19, "")
-    insertProducer(_conn, "Steven Spielberg", 1946, "Duel")
-    insertProducer(_conn, "Don Bleuth", 19, "")
+    insertProducer(_conn, "David Hayman", 19, "Sorcerer's Stone")
+    insertProducer(_conn, "Steven Spielberg", 1946, "Schindler's List")
+    insertProducer(_conn, "Michael Medwin", 1923, "If")
+    insertProducer(_conn, "Stanley Kubrick", 1928, "Fear and Desire")
+    insertProducer(_conn, "Donald Kushner", 19, "Tron")
+    insertProducer(_conn, "Neil Simon", 19, "Nijinsky")
+    insertProducer(_conn, "Ronald Schwary", 19, "Batteries Not Included")
+    insertProducer(_conn, "Richard Matheson", 19, "Duel")
+    insertProducer(_conn, "Keith Barish", 19, "Ironweed")
+    insertProducer(_conn, "William Kennedy", 19, "Ironweed")
+    insertProducer(_conn, "Herbert Ross", 19, "Max Dugan Returns")
+    insertProducer(_conn, "Hugh Wheeler", 19, "Nijinsky")
+    insertProducer(_conn, "Romola Nijinsky", 19, "Nijinsky")
+    insertProducer(_conn, "Vaslav Nijinsky", 19, "Nijinsky")
+    insertProducer(_conn, "Mark Shivas", 19, "Moonlighting")
+    insertProducer(_conn, "Jerzy Skolimowski", 19, "Moonlighting")
+    insertProducer(_conn, "Michael White", 19, "Moonlighting")
+    insertProducer(_conn, "Jerry Bresler", 19, "Diamond Head")
+    insertProducer(_conn, "Albert Cohen", 19, "Horizons West")
+    insertProducer(_conn, "Bill Butler", 19, "A Clockwork Orange")
+    insertProducer(_conn, "Lindsay Anderson", 19, "If")
+    
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -339,11 +355,21 @@ def populateDirector(_conn):
     print("Populate Director")
     
     insertDirector(_conn, "Steven Spielberg", 1946, "Duel")
-    insertDirector(_conn, "Roger Allers", 1949, "Tron")
+    insertDirector(_conn, "Roger Allers", 1949, "The Lion King")
+    insertDirector(_conn, "Chris Columbus", 1958, "Sorcerer's Stone")
     insertDirector(_conn, "Rob Minkoff", 1962, "The Lion King")
     insertDirector(_conn, "Stanley Kubrick", 1928, "Fear and Desire")
-    insertDirector(_conn, "Chris Columbus")
+    insertDirector(_conn, "Chris Columbus", 1958, "Sorcerer's Stone")
     insertDirector(_conn, "George Lucas", 19, "Star Wars")
+    insertDirector(_conn, "Steven Lisberger", 19, "Tron")
+    insertDirector(_conn, "Herbert Ross", 19, "Nijinsky")
+    insertDirector(_conn, "Hector Babenco", 19, "Ironweed")
+    insertDirector(_conn, "Guy Green", 19, "Diamond Head")
+    insertDirector(_conn, "Budd Boetticher", 19, "Horizons West")
+    insertDirector(_conn, "Jerzy Skilowski", 19, "Moonlighting")
+    insertDirector(_conn, "Lindsay Anderson", 19, "If")
+    insertDirector(_conn, "Matthew Robbins", 19, "Batteries Not Included")
+    insertDirector(_conn, "Budd Boetticher", 19, "Horizons West")
 
     
     print("++++++++++++++++++++++++++++++++++")
@@ -367,19 +393,21 @@ def populateActor(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Actor")
     
-    insertActor(_conn, "Matthew Boderick", 1962, "Max Dugan Returns")
     insertActor(_conn, "Nathan Lane", 1956, "Ironweed")
     insertActor(_conn, "Jeremy Irons", 1948, "Nijinsky")
     insertActor(_conn, "James Earl Jones", 1931, "Dr Strangelove")
-    insertActor(_conn, "Daniel Radcliffe", 19)
-    insertActor(_conn, "Emma Watson", 19)
-    insertActor(_conn, "Alan Rickman", 19)
-    insertActor(_conn, "Tony Jay", 19)
-    insertActor(_conn, "Jackie Chan", 19)
-    insertActor(_conn, "Jack Black", 19)
-    insertActor(_conn, "Ralph Fiennes", 19)
-    insertActor(_conn, "Liam Neeson", 19)
-    insertActor(_conn, "Ben Kingsley", 19)
+    insertActor(_conn, "Daniel Radcliffe", 1989, "Sorcerer's Stone")
+    insertActor(_conn, "Emma Watson", 1990, "Sorcerer's Stone")
+    insertActor(_conn, "Matthew Broderick", 1962, "Max Dugan Returns")
+    insertActor(_conn, "Alan Rickman", 1946, "Sorcerer's Stone")
+    insertActor(_conn, "Ralph Fiennes", 1962, "Schindler's List")
+    insertActor(_conn, "Liam Neeson", 1952, "Schindler's List")
+    insertActor(_conn, "Dennis Weaver", 1924, "Horizons West")
+    insertActor(_conn, "Malcolm McDowell", 1943, "If")
+    insertActor(_conn, "Jack Nicholson", 1937, "Ironweed")
+    insertActor(_conn, "Dennis Weaver", 19, "Horizons West")
+    insertActor(_conn, "Jeff Bridges", 1943, "Tron")
+    insertActor(_conn, "Patrick Stewart", 1943, "The Prince of Egypt")
     
     print("++++++++++++++++++++++++++++++++++")
         
@@ -404,7 +432,16 @@ def populateComposer(_conn):
     print("Populate Composer")
     
     insertComposer(_conn, "Hans Zimmer", 1957, "Moonlighting")
-    insertComposer(_conn, "John Williams", 1932, "Diamond  Head")
+    insertComposer(_conn, "John Williams", 1932, "Diamond Head")
+    insertComposer(_conn, "Billy Goldenberg", 1936, "Duel")
+    insertComposer(_conn, "Wendy Carlos", 1939, "A Clockwork Orange")
+    insertComposer(_conn, "Laurie Johnson", 1927, "Dr Strangelove")
+    insertComposer(_conn, "David Shire", 1937, "Max Dugan Returns")
+    insertComposer(_conn, "James Horner", 1953, "Batteries Not Included")
+    insertComposer(_conn, "Uncredited", 0, "Horizons West")
+    insertComposer(_conn, "Marc Wilkinson", 1929, "If")
+    insertComposer(_conn, "Stanley Myers", 1930, "Moonlighting")
+    insertComposer(_conn, "John Morris", 1926, "Ironweed")
     
     print("++++++++++++++++++++++++++++++++++")
         
@@ -430,16 +467,15 @@ def populateStudio(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Studio")
     
-    insertStudio(_conn, "Dreamworks",)
-    insertStudio(_conn, "Disney", )
-    insertStudio(_conn, "Universal", )
-    insertStudio(_conn, "Warner Bros", )
-    insertStudio(_conn, "Lionsgate", )
-    insertStudio(_conn, "Miracle Films", 1950)
-    insertStudio(_conn, "Paramount", 1912)
-    insertStudio(_conn, "Sony", )
-    insertStudio(_conn, "Tri-Star", )
-    insertStudio(_conn, "Columbia", 1918)
+    insertStudio(_conn, "Disney", 1923, "")
+    insertStudio(_conn, "Dreamworks", 1994, "")
+    insertStudio(_conn, "Universal Pictures", 1912, "")
+    insertStudio(_conn, "Warner Bros", 1923, "")
+    insertStudio(_conn, "Miracle Films", 1950, "")
+    insertStudio(_conn, "Paramount", 1912, "")
+    insertStudio(_conn, "Tri-Star", 1982, "")
+    insertStudio(_conn, "Columbia", 1918, "")
+    insertStudio(_conn, "Independent", 0, "Not Applicable")
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -465,22 +501,22 @@ def populatePresident(_conn):
     
     insertPresident(_conn, "Jeffery Katzenberg", )
     insertPresident(_conn, "Walt Disney",)
+    insertPresident(_conn, "Roy Disney",)
     insertPresident(_conn, "Bob Eisner", )
     
     
     print("++++++++++++++++++++++++++++++++++")
     
-def insertMovie(_conn, _name, _genre, _year, _revenue, _directorO, directorTw, directorTr, 
-    directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
-    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, composerTw, _studioO, studioTw, _review):
+def insertMovie(_conn, _name, _genre, _year, _revenue, _directorO, directorTw, 
+    _producerO, producerTw, producerTr, _actorO, actorTw, actorTr,
+    _composerO, _studioO, _review):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Movie")
     try: 
-        sql = "INSERT INTO movie VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"#24
-        args = [_name, _genre, _year, _revenue, _directorO, directorTw, directorTr, directorFo, 
-                directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, _actorO, 
-                actorTw, actorTr, actorFo, actorFi, _composerO, composerTw,
-                _studioO, studioTw, _review]
+        sql = "INSERT INTO movie VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        args = [_name, _genre, _year, _revenue, _directorO, directorTw, _producerO, producerTw, producerTr, _actorO, 
+                actorTw, actorTr, _composerO, 
+                _studioO, _review]
         _conn.execute(sql, args)
 
         _conn.commit()
@@ -495,42 +531,34 @@ def populateMovie(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Movie")
     
-    insertMovie(_conn, "The Lion King", "Dramedy", 1994, 968400000, "Roger Allers", "Rob Minkoff", NULL, NULL, NULL, "Don Hahn", NULL, NULL, NULL, NULL, "Matthew Boderick", "Nathan Lane", "Jeremy Irons", "James Earl Jones", NULL, "Hans Zimmer", NULL,  "Disney", NULL, 1)
-    insertMovie(_conn, "Sorceror's Stone", "Fantasy", 2001, 1024000000, "Chris Columbus", NULL, NULL, NULL, NULL, "David Heyman", NULL, NULL, NULL, NULL, "Daniel Radcliffe", "Emma Watson", "Alan Rickman", NULL, NULL, "John Williams", NULL, "Warner Bros", NULL, 2)
-    insertMovie(_conn, "The Amazing Spider Man", "Hero", 20)
-    insertMovie(_conn, "Spider-Man", "Hero", 20)
-    insertMovie(_conn, "Jurassic Park", "Science Fiction", 1993, 1057000000, "Steven Spielberg", NULL, NULL, NULL, NULL, "Kathleen Kennedy", "Gerald Molen", NULL, NULL, NULL, "Jeff Goldblum", "Richard Attenborough", "Samuel L Jackson", "BD Wong", "Wayne Knight", "John Williams", NULL, "Universal Pictures", NULL, 5)
-    insertMovie(_conn, "Schindler's List", "Drama", 1993, 322200000, "Steven Spielberg", NULL, NULL, NULL, NULL, "Steven Spielberg", "Gerald Molen", "Branko Lustig", NULL, NULL, "Liam Neeson", "Ralph Fiennes", "Ben Kingsley", NULL, NULL, "John Williams", NULL, "Universal Pictures", NULL, 6)
-    insertMovie(_conn, "The Land Before Time", "Drama", 19, "Steven Spielberg", "George Lucas", "Don Bluth")
-    insertMovie(_conn, "The Hunchback of Notre Dame", "Drama", 199, )
-    insertMovie(_conn, "The Batman", "Hero", 20, )
-    insertMovie(_conn, "Tron", "Science Fiction", 19, )
-    insertMovie(_conn, "Dr Strangelove", "Satire", 19, )   
-    insertMovie(_conn, "Max Dugan Returns", "Drama", 19, ) 
-    insertMovie(_conn, "The Hunger Games", "", 201, )
-    insertMovie(_conn, "Raiders of the Lost Ark", "Adventure", 19, )
-    insertMovie(_conn, "Batteries Not Included", "", 19, )
-    insertMovie(_conn, "Beauty and the Beast", "", 19, )
-    insertMovie(_conn, "Duel", "", 19)
-    insertMovie(_conn, "Fear and Desire", "", 19)
-    insertMovie(_conn, "Ironweed", "", 19, )
-    insertMovie(_conn, "Nijinsky", "", 19, )
-    insertMovie(_conn, "Moonlighting", "", 19, )
-    insertMovie(_conn, "Diamond Head", "", 19, )
-    
+    insertMovie(_conn, "The Lion King", "Dramedy", 1994, 968400000, "Roger Allers", "Rob Minkoff", "Don Hahn", NULL, NULL, "Nathan Lane", "Matthew Broderick", "Jeremy Irons", "Hans Zimmer", "Disney", 1)
+    insertMovie(_conn, "Sorcerer's Stone", "Fantasy", 2001, 1024000000, "Chris Columbus", NULL, "David Heyman", NULL, NULL,"Daniel Radcliffe", "Emma Watson", "Alan Rickman", "John Williams", "Warner Bros", 5)
+    insertMovie(_conn, "Schindler's List", "Drama", 1993, 322200000, "Steven Spielberg", NULL, "Steven Spielberg", "Gerald Molen", "Branko Lustig", "Liam Neeson", "Ralph Fiennes", NULL, "John Williams", "Universal Pictures", 3)
+    insertMovie(_conn, "The Prince of Egypt", "Drama", 20, 0000, "", NULL, "", NULL, NULL, "Ralph Fiennes", "Patrick Stewart", "", "", NULL, "Dreamworks", 20)
+    insertMovie(_conn, "Tron", "Science Fiction", 1982, 50000000, "Steven Lisberger", NULL, "Donald Kushner", NULL, NULL, "Jeff Bridges", NULL, NULL, "Wendy Carlos", "Disney", 7)
+    insertMovie(_conn, "Dr Strangelove", "Satire", 19, 0, "Stanley Kubrick", NULL, "Stanley Kubrick", NULL, NULL, "James Earl Jones", NULL, NULL, "Laurie Johnson", "Columbia", 13)   
+    insertMovie(_conn, "Max Dugan Returns", "Drama", 1983, 17613720, "Herbert Ross", NULL, "Herbert Ross", "Neil Simon", NULL, "Matthew Broderick", NULL, NULL, "David Shire", "Fox", 17)
+    insertMovie(_conn, "Batteries Not Included", "Horror", 1987, 65100000, "Matthew Robbins", NULL, "Ronald Schwary", NULL, NULL, "Hume Croyn", NULL, NULL, "James Horner", "Universal", 9)
+    insertMovie(_conn, "Duel", "Thriller", 1971, 450000, "Steven Speilberg", NULL, "Richard Matheson", NULL, NULL, "Dennis Weaver", NULL, NULL, "Billy Goldenberg", "Universal Studios",  11)
+    insertMovie(_conn, "Fear and Desire", "War", 1952, 53000, "Stanley Kubrick", NULL, "Stanley Krubrick", NULL, NULL, "Frank Silvera", NULL, NULL, "Gerald Fried", "Independent", 12)
+    insertMovie(_conn, "Ironweed", "Drama", 1987, 7300000, "Hector Babenco", NULL, "Keith Barish", "William Kennedy", NULL, "Jack Nicholson", "Nathan Lane", NULL, "John Morris", "Tri-Star", 15)
+    insertMovie(_conn, "Nijinsky", "Biographical", 1980, 1047454, "Herbert Ross", NULL, "Hugh Wheeler", "Romola Nijinsky", "Vaslav Nijinsky", "Jeremy Irons", NULL, NULL, "Uncredited", "Paramount", 16)
+    insertMovie(_conn, "Moonlighting", "Drama", 1982, 2000000, "Jerzy Skilowski", NULL, "Mark Shivas", "Jerzy Skolimowski", "Michael White", "Jeremy Irons", NULL, NULL, "Stanley Myers", "Miracle Films", 17)
+    insertMovie(_conn, "Diamond Head", "Romance", 1962, 4500000, "Guy Green", NULL, "Jerry Bresler", NULL, NULL, "Charlton Heston", NULL, NULL, "John Williams", "Columbia", 18)
+    insertMovie(_conn, "Horizons West", "Western", 1952, 500000, "Budd Boetticher", NULL, "Albert Cohen", NULL, NULL, "Dennis Weaver", NULL, NULL, "Uncredited", NULL, "Universal Pictures", 7)
+    insertMovie(_conn, "A Clockwork Orange", "Crime", 1971, 1440000000, "Stanley Kurbrick", NULL, "Bill Butler", NULL, NULL, "Malcolm McDowell", NULL, NULL, "Wendy Carlos", NULL, "Warner Bros", 19)
+    insertMovie(_conn, "If", "Drama", 1968, 2300000, "Lindsay Anderson", NULL, "Lindsay Anderson", "Michael Medwin", NULL, "Malcolm McDowell", NULL, NULL, "Marc Wilkinson", NULL, "Paramount", 2)
     
     print("++++++++++++++++++++++++++++++++++")
     
-def insertFirstFilm(_conn, _movie, _directorO, directorTw, directorTr, 
-    directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
-    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, composerTw):
+def insertEarliestHere(_conn, _movie, _directorO, directorTw, _producerO, producerTw, producerTr, 
+    _actorO, actorTw, actorTr, _composerO):
     print("++++++++++++++++++++++++++++++++++")
-    print("Insert Year")
+    print("Insert earliestHere")
     try: 
-        sql = "INSERT INTO firstFilm VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        args = [_movie, _directorO, directorTw, directorTr, 
-    directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
-    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, composerTw]
+        sql = "INSERT INTO earliestHere VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        args = [_movie, _directorO, directorTw , _producerO, producerTw, producerTr, 
+    _actorO, actorTw, actorTr, _composerO]
         _conn.execute(sql, args)
 
         _conn.commit()
@@ -540,24 +568,24 @@ def insertFirstFilm(_conn, _movie, _directorO, directorTw, directorTr,
         print(e)
     print("++++++++++++++++++++++++++++++++++")
         
-def populateFirstFilm(_conn):
+def populateEarliestHere(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Movie")
     
-    insertFirstFilm(_conn, "The Lion King")
+    insertEarliestHere(_conn, "The Lion King")
     
     print("++++++++++++++++++++++++++++++++++")
     
-def insertWorkedWith(_conn,  _directorO, directorTw, directorTr, 
+def insertWorkedWith(_conn, _directorO, directorTw, directorTr, 
     directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
-    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, composerTw):
+    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert workedWith")
     try: 
-        sql = "INSERT INTO workedWith VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        sql = "INSERT INTO workedWith VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         args = [_directorO, directorTw, directorTr, directorFo, 
                 directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, _actorO, 
-                actorTw, actorTr, actorFo, actorFi, _composerO, composerTw]
+                actorTw, actorTr, actorFo, actorFi, _composerO]
         _conn.execute(sql, args)
 
         _conn.commit()
@@ -570,9 +598,9 @@ def insertWorkedWith(_conn,  _directorO, directorTw, directorTr,
     
 def populateWorkedWith(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Populate Movie")
+    print("Populate workedWith")
     
-    insertWorkedWith(_conn, "The Lion King")
+    insertWorkedWith(_conn, "")
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -603,20 +631,28 @@ def populateYear(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Movie")
     
-    insertYear(_conn, 1953, )
+    insertYear(_conn, 1953, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+               NULL, NULL, NULL, "Kathleen Kennedy", NULL, NULL, NULL, NULL, 
+               NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
     insertYear(_conn, 1955, )
     insertYear(_conn, 1994, )
-    insertYear(_conn, 2001, )
+    insertYear(_conn, 2001, "Sorcerer's Stone", )
     insertYear(_conn, 1912, )
     insertYear(_conn, 1918, )
     insertYear(_conn, 1950, )
     insertYear(_conn, 1932, )
     insertYear(_conn, 1957, )
+    insertYear(_conn, 1971, )
+    insertYear(_conn, 1987, )
+    insertYear(_conn, 1968, )
+    insertYear(_conn, 1952, )
     insertYear(_conn, 1962, )
     insertYear(_conn, 1956, )
     insertYear(_conn, 1948, )
     insertYear(_conn, 1931, )
-    insertYear(_conn, )
+    insertYear(_conn, 2001, )
+    insertYear(_conn, 1993, )
+    insertYear(_conn, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Uncredited", NULL, NULL, NULL, NULL, NULL)
     
     print("++++++++++++++++++++++++++++++++++")
 
@@ -1178,7 +1214,7 @@ def populateTables(_conn):
     populateStudio(_conn)
     populatePresident(_conn)
     populateMovie(_conn)
-    populateFirstFilm(_conn)
+    populateEarliestHere(_conn)
     populateWorkedWith(_conn)
     populateYear(_conn)
         
