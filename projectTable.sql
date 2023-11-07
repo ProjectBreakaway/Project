@@ -73,22 +73,23 @@ CREATE TABLE earliestHere (
     e_Studio varchar(40) not null
 );
 CREATE TABLE workedWith(
-    w_Director varchar(40) not null,
+    w_Name varchar(40) not null, 
+    w_Director varchar(40),
     w_DirectorTwo varchar(40),
     w_DirectorThree varchar(40),
     w_DirectorFour varchar(40),
     w_DirectorFivee varchar(40),
-    w_Producer varchar(40) not null,
+    w_Producer varchar(40),
     w_ProducerTwo varchar(40),
     w_ProducerThree varchar(40),
     w_ProducerFour varchar(40),
-    w_ProducerFivee varchar(40),
-    w_Actor varchar(40) not null,
+    w_ProducerFive varchar(40),
+    w_Actor varchar(40),
     w_ActorTwo varchar(40),
     w_ActorThree varchar(40),
     w_ActorFour varchar(40),
     w_ActorFive varchar(40),
-    w_Composer varchar(40) not null, 
+    w_Composer varchar(40), 
     w_ComposerTwo varchar(40), 
     w_ComposerThree varchar(40) 
 );
@@ -119,5 +120,11 @@ CREATE TABLE year(
     y_ComposerThree varchar(40),
     y_ComposerFour varchar(40),
     y_ComposerFive varchar(40),
-    y_Studio varchar(40)
+    y_President varchar(40),
+    y_PresidentTwo varchar(40),
+    y_PresidentThree varchar(40),
+    y_PresidentFour varchar(40),
+    y_PresidentFive varchar(40), 
+    y_Studio varchar(40),
+    y_StudioTw varchar(40)
 );
