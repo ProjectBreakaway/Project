@@ -36,8 +36,7 @@ CREATE TABLE president(
     pre_Name varchar(30) not null,
     pre_Year decimal(4, 0) not null, 
     pre_Studio varchar(30) not null,
-    pre_YearsRan decimal(3) not null,
-    pre_FirstFilm varchar(40) not null
+    pre_YearsRan decimal(3) not null
 );
 CREATE TABLE movie(
     m_Title varchar(40) not null, 
@@ -121,10 +120,6 @@ CREATE TABLE year(
     y_ComposerFour varchar(40),
     y_ComposerFive varchar(40),
     y_President varchar(40),
-    y_PresidentTwo varchar(40),
-    y_PresidentThree varchar(40),
-    y_PresidentFour varchar(40),
-    y_PresidentFive varchar(40), 
     y_Studio varchar(40),
     y_StudioTw varchar(40)
 );
