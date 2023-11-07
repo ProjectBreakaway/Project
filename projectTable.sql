@@ -77,7 +77,7 @@ CREATE TABLE workedWith(
     w_DirectorTwo varchar(40),
     w_DirectorThree varchar(40),
     w_DirectorFour varchar(40),
-    w_DirectorFivee varchar(40),
+    w_DirectorFive varchar(40),
     w_Producer varchar(40),
     w_ProducerTwo varchar(40),
     w_ProducerThree varchar(40),
@@ -89,8 +89,7 @@ CREATE TABLE workedWith(
     w_ActorFour varchar(40),
     w_ActorFive varchar(40),
     w_Composer varchar(40), 
-    w_ComposerTwo varchar(40), 
-    w_ComposerThree varchar(40) 
+    w_ComposerTwo varchar(40)
 );
 CREATE TABLE year(
     y_year decimal(4, 0) not null, 

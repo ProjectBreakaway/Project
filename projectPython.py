@@ -137,8 +137,7 @@ def createTables(_conn):
                 w_ActorFour varchar(40),
                 w_ActorFive varchar(40),
                 w_Composer varchar(40) not null, 
-                w_ComposerTwo varchar(40), 
-                w_ComposerThree varchar(40))"""
+                w_ComposerTwo varchar(40)"""
         _conn.execute(sql)
         sql =""""CREATE TABLE year(
                 y_year decimal(4, 0) not null, 
@@ -525,7 +524,7 @@ def populateMovie(_conn):
     insertMovie(_conn, "The Lion King", "Dramedy", 1994, 968400000, "Roger Allers", "Rob Minkoff", "Don Hahn", NULL, NULL, "Nathan Lane", "Matthew Broderick", "James Earl Jones", "Hans Zimmer", "Disney", 1)
     insertMovie(_conn, "If", "Drama", 1968, 2300000, "Lindsay Anderson", NULL, "Lindsay Anderson", "Michael Medwin", NULL, "Malcolm McDowell", NULL, NULL, "Marc Wilkinson", NULL, "Paramount", 2)
     insertMovie(_conn, "Schindler's List", "Drama", 1993, 322200000, "Steven Spielberg", NULL, "Steven Spielberg", "Gerald Molen", "Branko Lustig", "Liam Neeson", "Ralph Fiennes", NULL, "John Williams", "Universal", 3)
-    insertMovie(_conn, "Horizons West", "Western", 1952, 500000, "Budd Boetticher", NULL, "Albert Cohen", NULL, NULL, "Dennis Weaver", NULL, NULL, "Uncredited", NULL, "Universal", 4)
+    insertMovie(_conn, "Horizons West", "Western", 1952, 500000, "Budd Boetticher", NULL, "Albert Cohen", NULL, NULL, "Dennis Weaver", NULL, NULL, "Uncredited", "Universal", 4)
     insertMovie(_conn, "Sorcerer's Stone", "Fantasy", 2001, 1024000000, "Chris Columbus", NULL, "David Heyman", NULL, NULL,"Daniel Radcliffe", "Emma Watson", "Alan Rickman", "John Williams", "Warner Bros", 5)
     insertMovie(_conn, "Tron", "Science Fiction", 1982, 50000000, "Steven Lisberger", NULL, "Donald Kushner", NULL, NULL, "Jeff Bridges", NULL, NULL, "Wendy Carlos", "Disney", 6)
     insertMovie(_conn, "Batteries Not Included", "Horror", 1987, 65100000, "Matthew Robbins", NULL, "Ronald Schwary", NULL, NULL, "Hume Croyn", NULL, NULL, "James Horner", "Universal", 7)
@@ -583,14 +582,14 @@ def populateEarliestHere(_conn):
     
 def insertWorkedWith(_conn, _name, _directorO, directorTw, directorTr, 
     directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
-    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO):
+    _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, _composerTw):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert workedWith")
     try: 
-        sql = "INSERT INTO workedWith VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        sql = "INSERT INTO workedWith VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         args = [_name, _directorO, directorTw, directorTr, directorFo, 
                 directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, _actorO, 
-                actorTw, actorTr, actorFo, actorFi, _composerO]
+                actorTw, actorTr, actorFo, actorFi, _composerO, _composerTw]
         _conn.execute(sql, args)
 
         _conn.commit()
@@ -605,11 +604,13 @@ def populateWorkedWith(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate workedWith")
     
-    insertWorkedWith(_conn, "Jeremy Irons", )
-    insertWorkedWith(_conn, "Steven Spielberg", )
-    insertWorkedWith(_conn, "Matthew Broderick", )
-    insertWorkedWith(_conn, "Stanley Kubrick", )
-    insertWorkedWith(_conn, "Nathan Lane", )
+    insertWorkedWith(_conn, "Jeremy Irons", "Herbert Ross", "Jerzy Skilowski", NULL, NULL, NULL, "Vaslav Nijinsky", "Romola Nijinsky", "Mark Shivas", "Jerzy Skolimoski", "Michael White", NULL, NULL, NULL, NULL, NULL, "Stanley Myers", "Uncredited")
+    insertWorkedWith(_conn, "Steven Spielberg", NULL, NULL, NULL, NULL, NULL, "Gerald Molen", "Branko Lustig", "Richard Matheson", NULL, NULL, "Dennis Weaver", "Liam Neeson", "Ralph Fiennes", NULL, NULL, "John Williams", "Billy Goldenberg")
+    insertWorkedWith(_conn, "John Williams", "Roger Allers", "Rob Minkoff", "Guy Green", "Chris Columbus", "Steven Spielberg", "Steven Spielberg", "Gerald Molen", "Branko Lustig", "David Heyman", NULL, "Daniel Radcliffe", "Emma Watson", "Alan Rickman", "Liam Neeson", "Ralph Fiennes", NULL, NULL)
+    insertWorkedWith(_conn, "Matthew Broderick", "Roger Allers", "Rob Minkoff", "Herbert Ross", NULL, NULL, "Don Hahn", "Herbert Ross", "Neil Simon", NULL, NULL, "Nathan Lane", "James Earl Jones", NULL, NULL, NULL, "Hans Zimmer", "David Shire")
+    insertWorkedWith(_conn, "Stanley Kubrick", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "James Earl Jones", "Frank Silvera", NULL, NULL, NULL, "Laurie Johnson", "Gerald Fried")
+    insertWorkedWith(_conn, "Nathan Lane",  "Roger Allers", "Rob Minkoff", "Hector Babenco", NULL, NULL, "Don Hahn", "Keith Barish", "William Kennedy", NULL, NULL, "Matthew Broderick", "James Earl Jones", "Jack Nicholson", NULL, NULL, "Hans Zimmer", "John Morris")
+    insertWorkedWith(_conn, "Dennis Weaver", "Steven Spielberg", "Budd Boetticher", NULL, NULL, NULL, "Richard Matheson", "Albert Cohen", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Billy Goldenberg", "Uncredited")
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -967,12 +968,13 @@ def populateYear(_conn):
 
 def trial1(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Genres with films with less than a billion in revenue: ")
+    print("Genres with films with less than a million in revenue: ")
 
     try:
         sql = """select m_genre
                 from movie
-                where revenue<1000000000"""
+                where 
+                m_revenue<1000000"""
 
         cur = _conn.cursor()
         cur.execute(sql)
