@@ -4,6 +4,7 @@ CREATE TABLE user (
 );
 CREATE TABLE review (
     r_reviewKey decimal(4, 0) not null, 
+    r_author varchar(20) not null, 
     r_movieTitle varchar(40) not null
 );
 CREATE TABLE director(
@@ -28,8 +29,8 @@ CREATE TABLE composer(
 );
 CREATE TABLE studio(
     s_Name varchar(30) not null, 
-    s_FoundingDate decimal(4, 0) not null,
-    s_currentPresident varchar(30) not null,
+    s_Year decimal(4, 0) not null,
+    s_President varchar(30) not null,
     s_FirstFilm varchar(40) not null
 );
 CREATE TABLE president(
@@ -50,6 +51,7 @@ CREATE TABLE movie(
     m_ProducerThree varchar(40),
     m_Actor varchar(40) not null,
     m_ActorTwo varchar(40),
+    m_ActorThree varchar(40),
     m_Composer varchar(40) not null,
     m_Studio varchar(40) not null,
     m_Review decimal(4, 0)

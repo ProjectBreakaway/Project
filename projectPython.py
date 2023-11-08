@@ -48,6 +48,7 @@ def createTables(_conn):
         _conn.execute(sql)
         sql =""""CREATE TABLE review(
                 r_reviewKey decimal(4, 0) not null, 
+                r_author varchar(20) not null, 
                 r_movieTitle varchar(40) not null)"""
         _conn.execute(sql)
         sql =""""CREATE TABLE director(
@@ -243,12 +244,12 @@ def populateUser(_conn):
     
     print("++++++++++++++++++++++++++++++++++")
     
-def insertReview(_conn, _reviewKey, _movieTitle):
+def insertReview(_conn, _reviewKey, _author, _movieTitle):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Review")
     try: 
-        sql = "INSERT INTO review VALUES(?, ?)"
-        args = [_reviewKey, _movieTitle]
+        sql = "INSERT INTO review VALUES(?, ?, ?)"
+        args = [_reviewKey, _author, _movieTitle]
         _conn.execute(sql, args)
 
         _conn.commit()
@@ -263,22 +264,22 @@ def populateReview(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Review")
     
-    insertReview(_conn, 1, "The Lion King")
-    insertReview(_conn, 2, "If")
-    insertReview(_conn, 3, "Schindler's List")
-    insertReview(_conn, 4, "Horizons West")
-    insertReview(_conn, 5, "Sorcerer's Stone")
-    insertReview(_conn, 6, "Tron")
-    insertReview(_conn, 7, "Batteries Not Included")
-    insertReview(_conn, 8, "Duel")
-    insertReview(_conn, 9, "Fear and Desire")
-    insertReview(_conn, 10, "Dr Strangelove")
-    insertReview(_conn, 11, "Max Dugan Returns")
-    insertReview(_conn, 12, "Ironweed")
-    insertReview(_conn, 13, "Nijinsky")
-    insertReview(_conn, 14, "Moonlighting")
-    insertReview(_conn, 15, "Diamond Head")
-    insertReview(_conn, 16, "A Clockwork Orange")
+    insertReview(_conn, 1, "Paul Kim", "The Lion King")
+    insertReview(_conn, 2, "Michael Moua", "If")
+    insertReview(_conn, 3, "Paul Kim", "Schindler's List")
+    insertReview(_conn, 4, "Michael Moua", "Horizons West")
+    insertReview(_conn, 5, "Paul Kim", "Sorcerer's Stone")
+    insertReview(_conn, 6, "Paul Kim", "Tron")
+    insertReview(_conn, 7, "Michael Moua", "Batteries Not Included")
+    insertReview(_conn, 8, "Michael Moua", "Duel")
+    insertReview(_conn, 9, "Michael Moua", "Fear and Desire")
+    insertReview(_conn, 10, "Paul Kim", "Dr Strangelove")
+    insertReview(_conn, 11, "Michael Moua", "Max Dugan Returns")
+    insertReview(_conn, 12, "Michael Moua", "Ironweed")
+    insertReview(_conn, 13, "Michael Moua", "Nijinsky")
+    insertReview(_conn, 14, "Michael Moua", "Moonlighting")
+    insertReview(_conn, 15, "Michael Moua", "Diamond Head")
+    insertReview(_conn, 16, "Paul Kim", "A Clockwork Orange")
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -994,24 +995,24 @@ def trial1(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial2(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Presidents of M reviews ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select pre_Name as president
+                from president, review, movie
+                where r_author="Michael Moua" and m_Review=r_reviewKey
+                and m_Studio=pre_Studio"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("president")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1020,24 +1021,24 @@ def trial2(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial3(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Password on young presidents")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select u_Password as password
+                from user, president, movie, review
+                where pre_Year>=1960 and pre_Studio=m_Studio and m_Review=r_reviewKey
+                and r_author=u_Username"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10}'.format("password")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10}'.format(row[0])
             print(l)
 
     except Error as e:
@@ -1046,18 +1047,17 @@ def trial3(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial4(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Revenue by genre ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_genre as Genre, sum(m_revenue) as revenue
+                from movie
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10}'.format("Genre", "revenue")
         print(l)
         print("-------------------------------")
 
@@ -1072,24 +1072,25 @@ def trial4(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial5(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Films of distinct genre: ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Title as movie
+                from movie
+                where 
+                (select count(distinct m_genre)
+                from movie)=1"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("movie")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10}'.format(row[0])
             print(l)
 
     except Error as e:
@@ -1098,24 +1099,23 @@ def trial5(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial6(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("President and film years ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select pre_Year as presBirth, m_Year
+                from president, movie, 
+                where m_Revenue>1000000"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10} '.format("presBirth", "m_Year")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0], row[1])
             print(l)
 
     except Error as e:
@@ -1124,24 +1124,26 @@ def trial6(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial7(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("years without producers as directors")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select y_Year
+                from year, movie
+                except
+                select y_Year
+                from year, movie
+                where y_Year=m_Year and m_Director=m_Producer"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("y_Year")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1150,50 +1152,24 @@ def trial7(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial8(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("movies by collaborators ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Title as movie
+                from movie, workedWith
+                where m_Director=w_Name 
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("movie")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
-            print(l)
-
-    except Error as e:
-        print(e)
-
-    print("++++++++++++++++++++++++++++++++++")
-def trial17(_conn):
-    print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
-
-    try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
-
-        cur = _conn.cursor()
-        cur.execute(sql)
-
-        l = '{:>10} {:>10}'.format("model", "price")
-        print(l)
-        print("-------------------------------")
-
-        rows = cur.fetchall()
-        for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1205,21 +1181,25 @@ def trial9(_conn):
     print("PCs by maker: ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select pre_Year
+                from president, movie
+                where m_Studio=pre_Studio
+                except
+                select pre_Year
+                from president, movie
+                where m_Studio=pre_Studio and
+                m_Director=m_Producer"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("pre_Year")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1228,24 +1208,24 @@ def trial9(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial10(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Obscure profit")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select sum(m_Revenue) as profit
+                from review, movie
+                where r_reviewKey=m_Review and r_author="Michael Moua"
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("profit")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1254,13 +1234,14 @@ def trial10(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial11(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Mainstream Profit")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """
+                select sum(m_Revenue) as profit
+                from review, movie
+                where r_reviewKey=m_Review and r_author="Paul Kim"
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1280,24 +1261,28 @@ def trial11(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial12(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Distinct Films ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """
+                select m_Title as movie
+                from movie
+                except
+                select m_Title
+                from movie, earliestHere
+                where m_Title=e_Title
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10}'.format("movie")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1309,21 +1294,21 @@ def trial13(_conn):
     print("PCs by maker: ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Year, s_Year, pre_Year
+                from movie, studio, president, earliestHere
+                where m_Title=e_Title and m_Studio=s_Name and s_President=pre_Name
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10} {:>10}'.format("m_Year", "s_Year", "pre_Year")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} {:>10} {:>10}'.format(row[0], row[1], row[2])
             print(l)
 
     except Error as e:
@@ -1332,24 +1317,27 @@ def trial13(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial14(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Recent Career Genre ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_genre as genre
+                from movie
+                except
+                select m_genre
+                from movie, earliestHere
+                where m_Title=eTitle
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("genre")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1361,15 +1349,27 @@ def trial15(_conn):
     print("PCs by maker: ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Title, pre_Name
+                from movie, workedWith
+                where w_Name=m_Director 
+                union
+                select m_Title, pre_Name
+                from movie, workedWith
+                where w_Name=m_Actor
+                union
+                select m_Title, pre_Name
+                from movie, workedWith
+                where w_Name=m_Composer
+                union
+                select m_Title, pre_Name
+                from movie, workedWith
+                where w_Name=m_Producer and m_Producer!=m_Director
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10}'.format("m_Title", "pre_Name")
         print(l)
         print("-------------------------------")
 
@@ -1384,24 +1384,23 @@ def trial15(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial16(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Sorted Films ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Title
+                from movie
+                group by m_Year desc"""
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("model")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1410,24 +1409,25 @@ def trial16(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial17(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Presidents of Obscure Films ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select pre_Name as president 
+                from review, movie, president
+                where r_author="Michael Moua" and r_reviewKey=m_Review
+                and m_Studio=pre_Studio
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("president")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1436,18 +1436,20 @@ def trial17(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial18(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Producer's ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """
+            select p_Name as Producer, p_FirstFilm as earliest
+            from studio, movie, year, producer
+            where s_Name=m_Studio and (s_Name=y_Studio or s_Name=yStudioTwo) and 
+            y_Producer=p_Name
+        """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10}'.format("Producer", "earliest")
         print(l)
         print("-------------------------------")
 
@@ -1462,24 +1464,28 @@ def trial18(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial19(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Earliest Titles ")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select distinct(e_Title)
+                from workedWith, earliestHere, director
+                where w_Name=d_Name
+                union
+                select distinct(e_Title)
+                from workedWith, earliestHere, actor
+                where w_Name=a_Name 
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("e_Title")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1488,24 +1494,27 @@ def trial19(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial20(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Actor List where they aren't in early films")
 
     try:
-        sql = """select P.model as model, PC.price as price
-                from Product P, PC
-                where P.model = PC.model AND
-                maker = 'E'"""
+        sql = """select m_Title as movie, distinct(m_Actor) as Actor, distinct(m_ActorTwo) as Actor2, distinct(m_ActorThree) as Actor3
+                from workedWith, movie, earliestHere
+                where 
+                (w_Name=m_director or w_Name=m_Actor or w_Name=m_Composer) and
+                m_Title!=e_Title
+                group by m_Title
+                """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} {:>10} {:>10} {:>10}'.format("movie", "Actor", "Actor2", "Actor3")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} {:>10} {:>10} {:>10}'.format(row[0], row[1], row[2], row[3])
             print(l)
 
     except Error as e:
