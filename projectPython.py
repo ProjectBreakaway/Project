@@ -1,3 +1,4 @@
+
 import sqlite3
 from sqlite3 import Error
 
@@ -42,53 +43,60 @@ def createTables(_conn):
     _conn.execute("BEGIN")
     
     try:
-        sql =""""CREATE TABLE user(
+        sql ="""CREATE TABLE user(
                 u_Username char(20) not null,
                 u_Password varchar(30) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE review(
+        
+        sql ="""CREATE TABLE review(
                 r_reviewKey decimal(4, 0) not null, 
                 r_author varchar(20) not null, 
                 r_movieTitle varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE director(
+        
+        sql ="""CREATE TABLE director(
                 d_Name varchar(30) not null, 
                 d_Year decimal(4, 0) not null,
                 d_FirstFilm varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE producer(
+        
+        sql ="""CREATE TABLE producer(
                 p_Name varchar(30) not null, 
                 p_Year decimal(4, 0) not null,
                 p_FirstFilm varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE actor(
+        
+        sql ="""CREATE TABLE actor(
                 a_Name varchar(30) not null, 
                 a_Year decimal(4, 0) not null,
                 a_FirstFilm varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE composer(
+        
+        sql ="""CREATE TABLE composer(
                 c_Name varchar(30) not null, 
                 c_Year decimal(4, 0) not null,
                 c_FirstFilm varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE studio(
+        
+        sql ="""CREATE TABLE studio(
                 s_Name varchar(30) not null, 
-                s_FoundingDate decimal(4, 0) not null,
-                s_currentPresident varchar(30) not null,
+                s_Year decimal(4, 0) not null,
+                s_President varchar(30) not null,
                 s_FirstFilm varchar(40) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE president(
+        
+        sql ="""CREATE TABLE president(
                 pre_Name varchar(30) not null,
                 pre_Year decimal(4, 0) not null, 
                 pre_Studio varchar(30) not null,
-                pre_YearsRan decimal(3) not null,
-                pre_FirstFilm varchar(40) not null)"""
+                pre_YearsRan decimal(3) not null)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE movie(
+        
+        sql ="""CREATE TABLE movie(
                 m_Title varchar(40) not null, 
                 m_genre char(10) not null, 
                 m_Year decimal(4, 0) not null, 
-                m_Revenue decimal(15, 2) not null, 
+                m_Revenue decimal(12, 2) not null, 
                 m_Director varchar(40) not null,
                 m_DirectorTwo varchar(40),
                 m_Producer varchar(40) not null,
@@ -99,48 +107,48 @@ def createTables(_conn):
                 m_ActorThree varchar(40),
                 m_Composer varchar(40) not null,
                 m_Studio varchar(40) not null,
-                m_Review decimal(4, 0)"""
+                m_Review decimal(4, 0)
+)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE earliestHere(
-                e_Title varchar(40)
-                e_Director varchar(40) not null,
+        
+        sql ="""CREATE TABLE earliestHere (
+                e_Title varchar(40) not null,
+                e_Director varchar(40),
                 e_DirectorTwo varchar(40),
-                e_DirectorThree varchar(40),
-                e_Producer varchar(40) not null,
+                e_Producer varchar(40),
                 e_ProducerTwo varchar(40),
                 e_ProducerThree varchar(40),
-                e_ProducerFour varchar(40),
-                e_Actor varchar(40) not null,
+                e_Actor varchar(40),
                 e_ActorTwo varchar(40),
                 e_ActorThree varchar(40),
-                e_ActorFour varchar(40),
-                e_ActorFive varchar(40),
-                e_Composer varchar(40) not null,
-                e_ComposerTwo varchar(40),
-                e_Studio varchar(40) not null,
-                e_StudioTwo varchar(40))"""
+                e_Composer varchar(40),
+                e_Studio varchar(40))
+"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE workedWith(
+        
+        sql ="""CREATE TABLE workedWith(
                 w_Name varchar(40) not null, 
-                w_Director varchar(40) not null,
+                w_Director varchar(40),
                 w_DirectorTwo varchar(40),
                 w_DirectorThree varchar(40),
                 w_DirectorFour varchar(40),
-                w_DirectorFivee varchar(40),
-                w_Producer varchar(40) not null,
+                w_DirectorFive varchar(40),
+                w_Producer varchar(40),
                 w_ProducerTwo varchar(40),
                 w_ProducerThree varchar(40),
                 w_ProducerFour varchar(40),
                 w_ProducerFive varchar(40),
-                w_Actor varchar(40) not null,
+                w_Actor varchar(40),
                 w_ActorTwo varchar(40),
                 w_ActorThree varchar(40),
                 w_ActorFour varchar(40),
                 w_ActorFive varchar(40),
-                w_Composer varchar(40) not null, 
-                w_ComposerTwo varchar(40)"""
+                w_Composer varchar(40), 
+                w_ComposerTwo varchar(40)
+)"""
         _conn.execute(sql)
-        sql =""""CREATE TABLE year(
+        
+        sql ="""CREATE TABLE year(
                 y_year decimal(4, 0) not null, 
                 y_Movie varchar(40), 
                 y_MovieTwo varchar(40),
@@ -168,13 +176,11 @@ def createTables(_conn):
                 y_ComposerFour varchar(40),
                 y_ComposerFive varchar(40),
                 y_President varchar(40),
-                y_PresidentTwo varchar(40),
-                y_PresidentThree varchar(40),
-                y_PresidentFour varchar(40),
-                y_PresidentFive varchar(40), 
                 y_Studio varchar(40),
-                y_StudioTw varchar(40))"""
+                y_StudioTw varchar(40)
+)"""
         _conn.execute(sql)
+        
         _conn.execute("COMMIT")
         print("success")
     except Error as e:
@@ -207,7 +213,7 @@ def dropTables(_conn):
         _conn.execute(sql)
         sql = "DROP TABLE movie"
         _conn.execute(sql)
-        sql = "DROP TABLE firstFilm"
+        sql = "DROP TABLE earliestHere"
         _conn.execute(sql)
         sql = "DROP TABLE workedWith"
         _conn.execute(sql)
@@ -523,7 +529,7 @@ def populateMovie(_conn):
     print("Populate Movie")
     
     insertMovie(_conn, "The Lion King", "Dramedy", 1994, 968400000, "Roger Allers", "Rob Minkoff", "Don Hahn", NULL, NULL, "Nathan Lane", "Matthew Broderick", "James Earl Jones", "Hans Zimmer", "Disney", 1)
-    insertMovie(_conn, "If", "Drama", 1968, 2300000, "Lindsay Anderson", NULL, "Lindsay Anderson", "Michael Medwin", NULL, "Malcolm McDowell", NULL, NULL, "Marc Wilkinson", NULL, "Paramount", 2)
+    insertMovie(_conn, "If", "Drama", 1968, 2300000, "Lindsay Anderson", NULL, "Lindsay Anderson", "Michael Medwin", NULL, "Malcolm McDowell", NULL, NULL, "Marc Wilkinson", "Paramount", 2)
     insertMovie(_conn, "Schindler's List", "Drama", 1993, 322200000, "Steven Spielberg", NULL, "Steven Spielberg", "Gerald Molen", "Branko Lustig", "Liam Neeson", "Ralph Fiennes", NULL, "John Williams", "Universal", 3)
     insertMovie(_conn, "Horizons West", "Western", 1952, 500000, "Budd Boetticher", NULL, "Albert Cohen", NULL, NULL, "Dennis Weaver", NULL, NULL, "Uncredited", "Universal", 4)
     insertMovie(_conn, "Sorcerer's Stone", "Fantasy", 2001, 1024000000, "Chris Columbus", NULL, "David Heyman", NULL, NULL,"Daniel Radcliffe", "Emma Watson", "Alan Rickman", "John Williams", "Warner Bros", 5)
@@ -537,7 +543,7 @@ def populateMovie(_conn):
     insertMovie(_conn, "Nijinsky", "Biographical", 1980, 1047454, "Herbert Ross", NULL, "Hugh Wheeler", "Romola Nijinsky", "Vaslav Nijinsky", "Jeremy Irons", NULL, NULL, "Uncredited", "Paramount", 13)
     insertMovie(_conn, "Moonlighting", "Drama", 1982, 2000000, "Jerzy Skilowski", NULL, "Mark Shivas", "Jerzy Skolimowski", "Michael White", "Jeremy Irons", NULL, NULL, "Stanley Myers", "Miracle Films", 14)
     insertMovie(_conn, "Diamond Head", "Romance", 1962, 4500000, "Guy Green", NULL, "Jerry Bresler", NULL, NULL, "Charlton Heston", NULL, NULL, "John Williams", "Columbia", 15)
-    insertMovie(_conn, "A Clockwork Orange", "Crime", 1971, 1440000000, "Stanley Kurbrick", NULL, "Bill Butler", NULL, NULL, "Malcolm McDowell", NULL, NULL, "Wendy Carlos", NULL, "Warner Bros", 16)
+    insertMovie(_conn, "A Clockwork Orange", "Crime", 1971, 1440000000, "Stanley Kurbrick", NULL, "Bill Butler", NULL, NULL, "Malcolm McDowell", NULL, NULL, "Wendy Carlos", "Warner Bros", 16)
     
     print("++++++++++++++++++++++++++++++++++")
     
@@ -546,7 +552,7 @@ def insertEarliestHere(_conn, _movie, _directorO, directorTw, _producerO, produc
     print("++++++++++++++++++++++++++++++++++")
     print("Insert earliestHere")
     try: 
-        sql = "INSERT INTO earliestHere VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        sql = "INSERT INTO earliestHere VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         args = [_movie, _directorO, directorTw, _producerO, producerTw, producerTr, 
     _actorO, actorTw, actorTr, _composerO, _studio]
         _conn.execute(sql, args)
@@ -562,19 +568,19 @@ def populateEarliestHere(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Movie")
     
-    insertEarliestHere(_conn, "The Lion King", "Roger Allers", "Rob Minkoff", NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Hans Zimmer", "Disney")
-    insertEarliestHere(_conn, "If", "Lindsay Anderson", NULL, "Michael Medwin", "Lindsay Anderson", NULL, "Marc Wilkinson", "Paramount")
+    insertEarliestHere(_conn, "The Lion King", "Roger Allers", "Rob Minkoff", NULL, NULL, NULL, NULL, NULL, NULL, "Hans Zimmer", "Disney")
+    insertEarliestHere(_conn, "If", "Lindsay Anderson", NULL, "Michael Medwin", "Lindsay Anderson", NULL, "Marc Wilkinson", NULL, NULL, NULL, "Paramount")
     insertEarliestHere(_conn, "Schindler's List", NULL, NULL, "Steven Spielberg", NULL, NULL, "Malcolm McDowell", NULL, NULL, NULL, NULL)
     insertEarliestHere(_conn, "Horizons West", "Budd Boetticher", NULL, NULL, NULL, NULL, "Dennis Weaver", NULL, NULL, "Uncredited", NULL)
     insertEarliestHere(_conn, "Sorcerer's Stone", "Chris Columbus", NULL, "David Hayman", NULL, NULL, "Daniel Radcliffe", "Emma Watson", "Alan Rickman", NULL, NULL)
     insertEarliestHere(_conn, "Tron", "Steven Lisberger", NULL, "Donald Kushner", NULL, NULL, NULL, NULL, NULL, NULL, "Disney")
     insertEarliestHere(_conn, "Batteries Not Included", "Matthew Robbins", NULL, "Gerald Molen", "Ronald Schwary", NULL, NULL, NULL, NULL, "James Horner", NULL)
     insertEarliestHere(_conn, "Duel", "Steven Spielberg", NULL, "Richard Matheson", NULL, NULL, NULL, NULL, NULL, NULL, NULL)
-    insertEarliestHere(_conn, "Fear and Desire", "Stanley Kubrick", NULL, "Stanley Kubrick", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+    insertEarliestHere(_conn, "Fear and Desire", "Stanley Kubrick", NULL, "Stanley Kubrick", NULL, NULL, NULL, NULL, NULL, NULL, NULL)
     insertEarliestHere(_conn, "Dr Strangelove", NULL, NULL, NULL, NULL, NULL, "James Earl Jones", NULL, NULL, NULL, "Independent")
     insertEarliestHere(_conn, "Max Dugan Returns", NULL, NULL, "Neil Simon", "Herbert Ross", NULL, "Matthew Broderick", NULL, NULL, "Stanley Myers", NULL)
     insertEarliestHere(_conn, "Ironweed", "Herbert Ross", NULL, "Keith Barish", "Marcia Nasatir", NULL, "Nathan Lane", "Jack Nicolson", NULL, "John Morris", "Tri-Star")
-    insertEarliestHere(_conn, "Nijinsky", "Hector Babenco", NULL, "Hugh Wheeler", "Romola Nijinsky", "Vaslav Nijinsky", "Jeremy Irons", NULL, NULL, NULL, )
+    insertEarliestHere(_conn, "Nijinsky", "Hector Babenco", NULL, "Hugh Wheeler", "Romola Nijinsky", "Vaslav Nijinsky", "Jeremy Irons", NULL, NULL, NULL, NULL)
     insertEarliestHere(_conn, "Moonlighting", "Jerzy Skilowski", NULL, NULL, "Mark Shivas", "Jerzy Skolimowski", "Michael White", NULL, NULL, "Stanley Myers", "Miracle Films")
     insertEarliestHere(_conn, "Diamond Head", "Guy Green", NULL, NULL, NULL, NULL, NULL, NULL, NULL, "John Williams", "Columbia")
     insertEarliestHere(_conn, "A Clockwork Orange", NULL, NULL, "Bill Butler", NULL, NULL, NULL, NULL, NULL, "Wendy Carlos", "Warner Bros")
@@ -624,7 +630,7 @@ def insertYear(_conn, _year, _movie, _movietw, _movietr, _moviefo, _moviefi,
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Year")
     try: 
-        sql = "INSERT INTO year VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        sql = "INSERT INTO year VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         args = [_year, _movie, _movietw, _movietr, _moviefo, _moviefi, _director, _directortw, _directortr, _directorfo, _directorfi,
                _producer, _producertw, _producertr, _producerfo, _producerfi,
                _actor, _actortwo, _actortre, _actorfo, _actorfi,
@@ -902,7 +908,7 @@ def populateYear(_conn):
                NULL, NULL, NULL, NULL, NULL, 
                NULL, NULL, NULL, NULL, NULL, 
                NULL, NULL, NULL)
-    insertYear(_conn, 1971, "Duel", "A Clockwork Orange", NULL, NULL, NULL, NULL, 
+    insertYear(_conn, 1971, "Duel", "A Clockwork Orange", NULL, NULL, NULL,  
                NULL,  NULL, NULL, NULL, NULL, 
                NULL, NULL, NULL, NULL, NULL, 
                NULL, NULL, NULL, NULL, NULL, 
@@ -1052,6 +1058,7 @@ def trial4(_conn):
     try:
         sql = """select m_genre as Genre, sum(m_revenue) as revenue
                 from movie
+                group by Genre
                 """
 
         cur = _conn.cursor()
@@ -1075,11 +1082,10 @@ def trial5(_conn):
     print("Films of distinct genre: ")
 
     try:
-        sql = """select m_Title as movie
-                from movie
+        sql = """select distinct m1.m_Title as movie
+                from movie m1, movie m2
                 where 
-                (select count(distinct m_genre)
-                from movie)=1"""
+                m1.m_Title<>m2.m_Title and m1.m_genre!=m2.m_genre"""
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1103,8 +1109,8 @@ def trial6(_conn):
 
     try:
         sql = """select pre_Year as presBirth, m_Year
-                from president, movie, 
-                where m_Revenue>1000000"""
+                from president, movie 
+                where m_Revenue>1000000 and pre_Studio=m_Studio"""
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1178,7 +1184,7 @@ def trial8(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial9(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("President birth years of those who didn't work with producer/director combo: ")
 
     try:
         sql = """select pre_Year
@@ -1246,13 +1252,13 @@ def trial11(_conn):
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("model", "price")
+        l = '{:>10} '.format("profit")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1261,16 +1267,14 @@ def trial11(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial12(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Distinct Films ")
+    print("Distinct Film Genres")
 
     try:
         sql = """
-                select m_Title as movie
-                from movie
-                except
-                select m_Title
-                from movie, earliestHere
-                where m_Title=e_Title
+                select distinct m1.m_genre
+                from movie m1, movie m2
+                where 
+                m1.m_Title<>m2.m_Title and m1.m_genre!=m2.m_genre
                 """
 
         cur = _conn.cursor()
@@ -1291,24 +1295,24 @@ def trial12(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial13(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Establishing years of movies, studios, and presidents  ")
 
     try:
-        sql = """select m_Year, s_Year, pre_Year
+        sql = """select m_Title, m_Year, s_Year, pre_Year
                 from movie, studio, president, earliestHere
-                where m_Title=e_Title and m_Studio=s_Name and s_President=pre_Name
+                where m_Title=e_Title and m_Studio=s_Name and s_Name=pre_Studio
                 """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10} {:>10}'.format("m_Year", "s_Year", "pre_Year")
+        l = '{:>20} {:>10} {:>10} {:>10}'.format("m_Title","m_Year", "s_Year", "pre_Year")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10} {:>10}'.format(row[0], row[1], row[2])
+            l = '{:>20} {:>10} {:>10} {:>10}'.format(row[0], row[1], row[2], row[3])
             print(l)
 
     except Error as e:
@@ -1320,12 +1324,9 @@ def trial14(_conn):
     print("Recent Career Genre ")
 
     try:
-        sql = """select m_genre as genre
-                from movie
-                except
-                select m_genre
+        sql = """select distinct m_genre as genre
                 from movie, earliestHere
-                where m_Title=eTitle
+                where m_Title=e_Title
                 """
 
         cur = _conn.cursor()
@@ -1346,36 +1347,36 @@ def trial14(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial15(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("PCs by maker: ")
+    print("Presidents of collaborators ")
 
     try:
-        sql = """select m_Title, pre_Name
-                from movie, workedWith
+        sql = """select distinct pre_Name
+                from movie, workedWith, president
                 where w_Name=m_Director 
                 union
-                select m_Title, pre_Name
-                from movie, workedWith
+                select distinct pre_Name
+                from movie, workedWith, president
                 where w_Name=m_Actor
                 union
-                select m_Title, pre_Name
-                from movie, workedWith
+                select distinct pre_Name
+                from movie, workedWith, president
                 where w_Name=m_Composer
                 union
-                select m_Title, pre_Name
-                from movie, workedWith
+                select distinct pre_Name
+                from movie, workedWith, president
                 where w_Name=m_Producer and m_Producer!=m_Director
                 """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10}'.format("m_Title", "pre_Name")
+        l = '{:>10} '.format("pre_Name")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10}'.format(row[0], row[1])
+            l = '{:>10}'.format(row[0])
             print(l)
 
     except Error as e:
@@ -1389,7 +1390,7 @@ def trial16(_conn):
     try:
         sql = """select m_Title
                 from movie
-                group by m_Year desc"""
+                group by m_Year"""
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1412,7 +1413,7 @@ def trial17(_conn):
     print("Presidents of Obscure Films ")
 
     try:
-        sql = """select pre_Name as president 
+        sql = """select distinct pre_Name as president 
                 from review, movie, president
                 where r_author="Michael Moua" and r_reviewKey=m_Review
                 and m_Studio=pre_Studio
@@ -1436,13 +1437,13 @@ def trial17(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial18(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Producer's ")
+    print("Producer's earliest films in database")
 
     try:
         sql = """
             select p_Name as Producer, p_FirstFilm as earliest
             from studio, movie, year, producer
-            where s_Name=m_Studio and (s_Name=y_Studio or s_Name=yStudioTwo) and 
+            where s_Name=m_Studio and (s_Name=y_Studio or s_Name=y_StudioTwo) and 
             y_Producer=p_Name
         """
 
@@ -1494,27 +1495,26 @@ def trial19(_conn):
     print("++++++++++++++++++++++++++++++++++")
 def trial20(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Actor List where they aren't in early films")
+    print("Shared Genres")
 
     try:
-        sql = """select m_Title as movie, distinct(m_Actor) as Actor, distinct(m_ActorTwo) as Actor2, distinct(m_ActorThree) as Actor3
-                from workedWith, movie, earliestHere
+        sql = """select distinct m1.m_genre as genre
+                from movie m1, movie m2
                 where 
-                (w_Name=m_director or w_Name=m_Actor or w_Name=m_Composer) and
-                m_Title!=e_Title
-                group by m_Title
+                m1.m_Title<>m2.m_Title and m1.m_genre=m2.m_genre
+                group by genre
                 """
 
         cur = _conn.cursor()
         cur.execute(sql)
 
-        l = '{:>10} {:>10} {:>10} {:>10}'.format("movie", "Actor", "Actor2", "Actor3")
+        l = '{:>10}'.format("genre")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} {:>10} {:>10} {:>10}'.format(row[0], row[1], row[2], row[3])
+            l = '{:>10} '.format(row[0])
             print(l)
 
     except Error as e:
@@ -1537,14 +1537,14 @@ def populateTables(_conn):
     populateYear(_conn)
         
 def main():
-    database = r"projectTable.sql"
-
+    database = r"project.sqlite"
+    
     # create a database connection
     conn = openConnection(database)
     with conn:
-        dropTables(conn)
-        createTables(conn)
-        populateTables(conn)
+        # dropTables(conn)
+        # createTables(conn)
+        # populateTables(conn)
         
         trial1(conn)
         trial2(conn)

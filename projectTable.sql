@@ -1,6 +1,6 @@
 CREATE TABLE user (
-    u_Username char(20) not null,
-    u_Password varchar(30) not null
+    u_Username char(20) NOT NULL,
+    u_Password varchar(30) NOT NULL
 );
 CREATE TABLE review (
     r_reviewKey decimal(4, 0) not null, 
@@ -57,21 +57,17 @@ CREATE TABLE movie(
     m_Review decimal(4, 0)
 );
 CREATE TABLE earliestHere (
-    e_Title varchar(40)
-    e_Director varchar(40) not null,
+    e_Title varchar(40) not null,
+    e_Director varchar(40),
     e_DirectorTwo varchar(40),
-    e_Producer varchar(40) not null,
+    e_Producer varchar(40),
     e_ProducerTwo varchar(40),
     e_ProducerThree varchar(40),
-    e_ProducerFour varchar(40),
-    e_ProducerFive varchar(40),
-    e_Actor varchar(40) not null,
+    e_Actor varchar(40),
     e_ActorTwo varchar(40),
     e_ActorThree varchar(40),
-    e_ActorFour varchar(40),
-    e_ActorFive varchar(40),
-    e_Composer varchar(40) not null,
-    e_Studio varchar(40) not null
+    e_Composer varchar(40),
+    e_Studio varchar(40)
 );
 CREATE TABLE workedWith(
     w_Name varchar(40) not null, 
