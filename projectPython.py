@@ -1,4 +1,3 @@
-
 import sqlite3
 from sqlite3 import Error
 
@@ -249,7 +248,67 @@ def populateUser(_conn):
     insertUser(_conn,"Paul Kim", "asdfghjkl")
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteUserWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete User")
+    try:
+        sql="delete from user where u_Username =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteUserWPassword(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete User")
+    try:
+        sql="delete from user where u_Password =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateUserName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update User")
+    try:
+        sql="update user set u_Password as ? where u_Username=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateUserPassword(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update User")
+    try:
+        sql="update user set u_Username as ? where u_Username=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+   
 def insertReview(_conn, _reviewKey, _author, _movieTitle):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Review")
@@ -287,6 +346,81 @@ def populateReview(_conn):
     insertReview(_conn, 15, "Michael Moua", "Diamond Head")
     insertReview(_conn, 16, "Paul Kim", "A Clockwork Orange")
     
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def deleteReviewWKey(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Review")
+    try:
+        sql="delete from review where r_reviewKey =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteReviewWAuthor(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Review")
+    try:
+        sql="delete from review where r_reviewKey =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def deleteReviewWMovieTitle(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Review")
+    try:
+        sql="delete from review where r_reviewKey =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateReviewAuthor(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Review")
+    try:
+        sql="update user set r_author as ? where r_reviewKey=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateReviewMovie(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Review")
+    try:
+        sql="update user set r_movieTitle as ? where r_reviewKey=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
     print("++++++++++++++++++++++++++++++++++")
     
 def insertProducer(_conn, _name, _year, _firstFilm):
@@ -333,7 +467,97 @@ def populateProducer(_conn):
     
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteProducerWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Producer")
+    try:
+        sql="delete from producer where p_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def deleteProducerWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Producer")
+    try:
+        sql="delete from producer where p_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteProducerWFirstFilm(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Producer")
+    try:
+        sql="delete from producer where p_FirstFilm =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateProducerName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Producer")
+    try: 
+        sql="update producer set p_Name as ? where p_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateProducerYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Producer")
+    try: 
+        sql="update producer set p_Year as ? where p_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateProducerFirstFilm(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Producer")
+    try: 
+        sql="update producer set p_FirstFilm as ? where p_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
 def insertDirector(_conn, _name, _year, _firstFilm):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Director")
@@ -369,7 +593,97 @@ def populateDirector(_conn):
 
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteDirectorWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Director")
+    try:
+        sql="delete from director where d_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+  
+def deleteDirectorWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Director")
+    try:
+        sql="delete from director where d_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+  
+def deleteDirectorWFirstFilm(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Director")
+    try:
+        sql="delete from director where d_FirstFilm =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+  
+def updateDirectorName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Director")
+    try: 
+        sql="update director set d_Name as ? where d_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def updateDirectorYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Director")
+    try: 
+        sql="update director set d_Year as ? where d_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateDirectorFirstFilm(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Director")
+    try: 
+        sql="update director set d_FirstFilm as ? where d_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+  
 def insertActor(_conn, _name, _year, _firstFilm):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Actor")
@@ -405,7 +719,97 @@ def populateActor(_conn):
     insertActor(_conn, "Jeff Bridges", 1943, "Tron")
     
     print("++++++++++++++++++++++++++++++++++")
-        
+
+def deleteActorWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Actor")
+    try:
+        sql="delete from actor where a_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteActorWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Actor")
+    try:
+        sql="delete from actor where a_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteActorWFirstFilm(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Actor")
+    try:
+        sql="delete from actor where a_FirstFilm =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+     
+def updateActorName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Actor")
+    try: 
+        sql="update actor set a_Name as ? where a_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateActorYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Actor")
+    try: 
+        sql="update actor set a_Year as ? where a_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateActorFirstFilm(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Actor")
+    try: 
+        sql="update actor set a_FirstFilm as ? where a_Name?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+       
 def insertComposer(_conn, _name, _year, _firstFilm):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert Composer")
@@ -420,7 +824,52 @@ def insertComposer(_conn, _name, _year, _firstFilm):
         _conn.rollback()
         print(e)
     print("++++++++++++++++++++++++++++++++++")
-        
+
+def deleteComposerWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Composer")
+    try:
+        sql="delete from composer where c_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteComposerWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Composer")
+    try:
+        sql="delete from composer where c_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteComposerWFirstFilm(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Composer")
+    try:
+        sql="delete from composer where c_FirstFilm =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+     
 def populateComposer(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate Composer")
@@ -437,6 +886,51 @@ def populateComposer(_conn):
     insertComposer(_conn, "Stanley Myers", 1930, "Moonlighting")
     insertComposer(_conn, "John Morris", 1926, "Ironweed")
     
+    print("++++++++++++++++++++++++++++++++++")
+       
+def updateComposerName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Composer")
+    try: 
+        sql="update composer set c_Name as ? where c_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateComposerYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Composer")
+    try: 
+        sql="update composer set c_Year as ? where c_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateComposerFirstFilm(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Composer")
+    try: 
+        sql="update composer set c_FirstFilm as ? where c_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
     print("++++++++++++++++++++++++++++++++++")
           
 def insertStudio(_conn, _name, _year, _currentPres, _firstFilm):
@@ -469,7 +963,127 @@ def populateStudio(_conn):
     insertStudio(_conn, "Independent", 0, "Not Applicable", "Fear and Desire")
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteStudioWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Studio")
+    try:
+        sql="delete from studio where s_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def deleteStudioWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Studio")
+    try:
+        sql="delete from studio where s_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteStudioWPresident(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Studio")
+    try:
+        sql="delete from studio where s_President =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteStudioWFirstFilm(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Studio")
+    try:
+        sql="delete from studio where s_FirstFilm =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateStudioName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Studio")
+    try: 
+        sql="update studio set s_Name as ? where s_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateStudioYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Studio")
+    try: 
+        sql="update studio set s_Year as ? where s_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateStudioFirstFilm(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Studio")
+    try: 
+        sql="update studio set s_ as ? where s_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateStudioPresident(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Studio")
+    try: 
+        sql="update studio set s_President as ? where s_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
 def insertPresident(_conn, _name, _year, _studio, _yearsRan):
     print("++++++++++++++++++++++++++++++++++")
     print("Insert President")
@@ -503,7 +1117,127 @@ def populatePresident(_conn):
     
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deletePresidentWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete President")
+    try:
+        sql="delete from president where pre_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deletePresidentWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete President")
+    try:
+        sql="delete from president where pre_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deletePresidentWStudio(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete President")
+    try:
+        sql="delete from president where pre_Studio =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deletePresidentWYearsR(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete President")
+    try:
+        sql="delete from president where pre_YearsRan =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updatePresidentName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update President")
+    try: 
+        sql="update president set pre_Name as ? where pre_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updatePresidentYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update President")
+    try: 
+        sql="update president set pre_Year as ? where pre_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updatePresidentYearsRan(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update President")
+    try: 
+        sql="update president set pre_YearsRan as ? where pre_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updatePresidentStudio(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update President")
+    try: 
+        sql="update president set pre_Studio as ? where pre_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
 def insertMovie(_conn, _name, _genre, _year, _revenue, _directorO, directorTw, 
     _producerO, producerTw, producerTr, _actorO, actorTw, actorTr,
     _composerO, _studioO, _review):
@@ -546,7 +1280,464 @@ def populateMovie(_conn):
     insertMovie(_conn, "A Clockwork Orange", "Crime", 1971, 1440000000, "Stanley Kurbrick", NULL, "Bill Butler", NULL, NULL, "Malcolm McDowell", NULL, NULL, "Wendy Carlos", "Warner Bros", 16)
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteMovieWTitle(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Title =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteMovieWGenre(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_genre =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWRevenue(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Revenue =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Don't sweat it. :)")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWDirector(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Director =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWDirectorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_DirectorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWProducer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Producer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWProducerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_ProducerTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWProducerThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_ProducerThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWActor(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Actor =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWActorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_ActorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWActorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_ActorThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+        print("Might be in another related slot")
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWComposer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Composer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWStudio(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Studio =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteMovieWReview(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Movie")
+    try:
+        sql="delete from movie where m_Review =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateMovieTitle(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Title as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieGenre(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_genre as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieYear(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Year as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateMovieRevenue(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Revenue as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieDirector(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Director as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieDirectorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_DirectorTwo as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieActor(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Actor as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieActorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_ActorTwo as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieActorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_ActorThree as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateMovieProducer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Producer as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieProducerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_ProducerTwo as ? where m_Title=?"
+        args=[_up1, _up2]
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieProducerThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_ProducerThree as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieComposer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Composer as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateMovieStudio(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Studio as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateMovieReview(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Movie")
+    try: 
+        sql="update movie set m_Review as ? where m_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
 def insertEarliestHere(_conn, _movie, _directorO, directorTw, _producerO, producerTw, producerTr, 
     _actorO, actorTw, actorTr, _composerO, _studio):
     print("++++++++++++++++++++++++++++++++++")
@@ -586,7 +1777,334 @@ def populateEarliestHere(_conn):
     insertEarliestHere(_conn, "A Clockwork Orange", NULL, NULL, "Bill Butler", NULL, NULL, NULL, NULL, NULL, "Wendy Carlos", "Warner Bros")
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteEarliestHereWTitle(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Title =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteEarliestHereWDirector(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Director =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWDirectorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_DirectorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWProducer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Producer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWProducerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_ProducerTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWProducerThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_ProducerThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWActor(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Actor =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWActorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_ActorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWActorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_ActorThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWComposer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Composer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteEarliestHereWStudio(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete EarliestHere")
+    try:
+        sql="delete from earliestHere where e_Studio =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateEarliestHereTitle(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_Title as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereDirector(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_Director as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereDirectorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update EarliestHere")
+    try: 
+        sql="update earliestHere set e_DirectorTwo as ? where e_Title=?"
+        args=[_up1, _up2]
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateEarliestHereProducer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_Producer as ? where e_Title=?"
+        args=[_up1, _up2]
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereProducerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_ProducerTwo as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereProducerThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_ProducerThree as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateEarliestHereActor(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Earliest Here")
+    try: 
+        sql="update earliestHere set e_Actor as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereActorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update EarliestHere")
+    try: 
+        sql="update earliestHere set e_ActorTwo as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereActorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update EarliestHere")
+    try: 
+        sql="update earliestHere set e_ActorThree as ? where e_Title=?"
+        args=[_up1, _up2]
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateEarliestHereComposer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update EarliestHere")
+    try: 
+        sql="update earliestHere set e_Composer as ? where e_Titler=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateEarliestHereStudio(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update EarliestHere")
+    try: 
+        sql="update earliestHere set e_Studio as ? where e_Title=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
 def insertWorkedWith(_conn, _name, _directorO, directorTw, directorTr, 
     directorFo, directorFi, _producerO, producerTw, producerTr, producerFo, producerFi, 
     _actorO, actorTw, actorTr, actorFo, actorFi, _composerO, _composerTw):
@@ -620,7 +2138,546 @@ def populateWorkedWith(_conn):
     insertWorkedWith(_conn, "Dennis Weaver", "Steven Spielberg", "Budd Boetticher", NULL, NULL, NULL, "Richard Matheson", "Albert Cohen", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Billy Goldenberg", "Uncredited")
     
     print("++++++++++++++++++++++++++++++++++")
+
+def deleteWorkedWithWName(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_Name =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
     
+def deleteWorkedWithWDirector(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_Director =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWDirectorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_DirectorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWDirectorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_DirectorThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWDirectorFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_DirectorFour =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWDirectorFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_DirectorFive =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWProducer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_Producer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWProducerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ProducerTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWProducerThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ProducerThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWProducerFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ProducerFour =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWProducerFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ProducerFive =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWActor(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_Actor =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWActorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ActorTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWActorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ActorThree =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWActorFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ActorFour =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWActorFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ActorFive =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWComposer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_Composer =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteWorkedWithWComposerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete WorkedWith")
+    try:
+        sql="delete from workedWith where w_ComposerTwo =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+ 
+def updateWorkedWithName(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_Name as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithDirector(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_Director as ? where w_Name=?"
+        args=[_up1, _up2]
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithDirectorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_DirectorTwo as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithDirectorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_DirectorThree as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithDirectorFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_DirectorFour as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithDirectorFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_DirectorFive as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithProducer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_Producer as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithProducerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ProducerTwo as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithProducerThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ProducerThree as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithProducerFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ProducerFour as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithProducerFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ProducerFive as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithActor(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_Actor as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithActorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ActorTwo as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithActorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ActorThree as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithActorFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ActorFour as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithActorFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ActorFive as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateWorkedWithComposer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_Composer as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateWorkedWithComposerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Worked With")
+    try: 
+        sql="update workedWith set w_ComposerTwo as ? where w_Name=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
 def insertYear(_conn, _year, _movie, _movietw, _movietr, _moviefo, _moviefi, 
                _director, _directortw, _directortr, _directorfo, _directorfi,
                _producer, _producertw, _producertr, _producerfo, _producerfi,
@@ -971,9 +3028,864 @@ def populateYear(_conn):
     
     print("++++++++++++++++++++++++++++++++++")
 
-#Example Route
+def deleteYear(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
 
-def trial1(_conn):
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWMovie(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWMovieTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWMovieThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWMovieFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWMovieFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+
+    
+def deleteYearWDirector(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_Director =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWDirectorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWDirectorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWDirectorFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWDirectorFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWProducer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWProducerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWProducerThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWProducerFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWProducerFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWActor(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWActorTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWActorThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWActorFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWActorFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWComposer(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWComposerTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWComposerThree(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWComposerFour(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWComposerFive(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWPresident(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWStudio(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def deleteYearWStudioTwo(_conn, _del):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Delete Year")
+    try:
+        sql="delete from year where y_year =?"
+        args=[_del]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearMovie(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Movie as ? where y_Movie=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearMovieTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_MovieTwo as ? where y_MovieTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearMovieThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_MovieThree as ? where y_MovieThree=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearMovieFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_MovieFour as ? where y_MovieFour=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearMovieFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update Year set y_MovieFive as ? where y_MovieFive=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearDirector(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Director as ? where y_Director=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearDirectorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_DirectorTwo as ? where y_DirectorTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearDirectorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_DirectorThree as ? where y_DirectorThree=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearDirectorFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_DirectorFour as ? where y_DirectorFour=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearDirectorFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update Year set y_DirectorFive as ? where y_DirectorFive=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearProducer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Produceras ? where y_Producer=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearProducerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ProducerTwo as ? where y_ProducerTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearProducerThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ProducerThree as ? where y_ProducerThree=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearProducerFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ProducerFour as ? where y_ProducerFour=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearProducerFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update Year set y_ProducerFive as ? where y_ProducerFive=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearActor(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Actor as ? where y_Actor=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearActorTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ActorTwo as ? where y_ActorTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearActorThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ActorThree as ? where y_ActorThree=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearActorFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ActorFour as ? where y_ActorFour=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearActorFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update Year set y_ActorFive as ? where y_ActorFive=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearComposer(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Composer as ? where y_Composer=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearComposerTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ComposerTwo as ? where y_ComposerTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearComposerThree(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ComposerThree as ? where y_ComposerThree=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearComposerFour(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_ComposerFour as ? where y_ComposerFour=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearComposerrFive(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update Year set y_ComposerFive as ? where y_ComposerFive=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearPresident(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_President as ? where y_President=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def updateYearStudio(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_Studio as ? where y_Studio=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+    
+def updateYearStudioTwo(_conn, _up1, _up2):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Update Year")
+    try: 
+        sql="update year set y_StudioTwo as ? where y_StudioTwo=?"
+        args=[_up1, _up2]
+        _conn.execute(sql, args)
+
+        _conn.commit()
+        print("success")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+    print("++++++++++++++++++++++++++++++++++")
+
+def trial1(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("Genres with films with less than a million in revenue: ")
 
@@ -981,10 +3893,11 @@ def trial1(_conn):
         sql = """select m_genre
                 from movie
                 where 
-                m_revenue<1000000"""
+                m_revenue<?"""
+        args=[_in]
 
         cur = _conn.cursor()
-        cur.execute(sql)
+        cur.execute(sql, args)
 
         l = '{:>10} '.format("genre")
         print(l)
@@ -999,26 +3912,27 @@ def trial1(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
-def trial2(_conn):
+def trial2(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
-    print("Presidents of M reviews ")
+    print("Presidents of _ reviews ")
 
     try:
-        sql = """select pre_Name as president
+        sql = """select pre_Name, r_author as president
                 from president, review, movie
-                where r_author="Michael Moua" and m_Review=r_reviewKey
+                where r_author=? and m_Review=r_reviewKey
                 and m_Studio=pre_Studio"""
+        args=[_in]
 
         cur = _conn.cursor()
-        cur.execute(sql)
+        cur.execute(sql, args)
 
-        l = '{:>10} '.format("president")
+        l = '{:>10} {:>10} '.format("pre_Name","president")
         print(l)
         print("-------------------------------")
 
         rows = cur.fetchall()
         for row in rows:
-            l = '{:>10} '.format(row[0])
+            l = '{:>10}{:>10} '.format(row[0], row[1])
             print(l)
 
     except Error as e:
@@ -1034,6 +3948,7 @@ def trial3(_conn):
                 from user, president, movie, review
                 where pre_Year>=1960 and pre_Studio=m_Studio and m_Review=r_reviewKey
                 and r_author=u_Username"""
+        
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1061,6 +3976,7 @@ def trial4(_conn):
                 group by Genre
                 """
 
+
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1087,8 +4003,10 @@ def trial5(_conn):
                 where 
                 m1.m_Title<>m2.m_Title and m1.m_genre!=m2.m_genre"""
 
+        args=[]
+
         cur = _conn.cursor()
-        cur.execute(sql)
+        cur.execute(sql, args)
 
         l = '{:>10} '.format("movie")
         print(l)
@@ -1103,17 +4021,19 @@ def trial5(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
-def trial6(_conn):
+def trial6(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("President and film years ")
 
     try:
         sql = """select pre_Year as presBirth, m_Year
                 from president, movie 
-                where m_Revenue>1000000 and pre_Studio=m_Studio"""
+                where m_Revenue>? and pre_Studio=m_Studio"""
+
+        args=[_in]
 
         cur = _conn.cursor()
-        cur.execute(sql)
+        cur.execute(sql, args)
 
         l = '{:>10} {:>10} '.format("presBirth", "m_Year")
         print(l)
@@ -1140,6 +4060,8 @@ def trial7(_conn):
                 from year, movie
                 where y_Year=m_Year and m_Director=m_Producer"""
 
+        
+
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1156,18 +4078,20 @@ def trial7(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
-def trial8(_conn):
+def trial8(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("movies by collaborators ")
 
     try:
         sql = """select m_Title as movie
                 from movie, workedWith
-                where m_Director=w_Name 
+                where m_Director=w_Name and m_Director=? 
                 """
 
+        args=[_in]
+
         cur = _conn.cursor()
-        cur.execute(sql)
+        cur.execute(sql, args)
 
         l = '{:>10} '.format("movie")
         print(l)
@@ -1196,6 +4120,8 @@ def trial9(_conn):
                 where m_Studio=pre_Studio and
                 m_Director=m_Producer"""
 
+        
+
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1221,6 +4147,8 @@ def trial10(_conn):
                 from review, movie
                 where r_reviewKey=m_Review and r_author="Michael Moua"
                 """
+
+        
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1248,6 +4176,8 @@ def trial11(_conn):
                 from review, movie
                 where r_reviewKey=m_Review and r_author="Paul Kim"
                 """
+
+        
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1277,6 +4207,8 @@ def trial12(_conn):
                 m1.m_Title<>m2.m_Title and m1.m_genre!=m2.m_genre
                 """
 
+        
+
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1303,6 +4235,7 @@ def trial13(_conn):
                 where m_Title=e_Title and m_Studio=s_Name and s_Name=pre_Studio
                 """
 
+        
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1329,6 +4262,7 @@ def trial14(_conn):
                 where m_Title=e_Title
                 """
 
+        
         cur = _conn.cursor()
         cur.execute(sql)
 
@@ -1366,6 +4300,8 @@ def trial15(_conn):
                 from movie, workedWith, president
                 where w_Name=m_Producer and m_Producer!=m_Director
                 """
+
+        
 
         cur = _conn.cursor()
         cur.execute(sql)
@@ -1535,37 +4471,910 @@ def populateTables(_conn):
     populateEarliestHere(_conn)
     populateWorkedWith(_conn)
     populateYear(_conn)
+   
+def deleteTuple(_conn):
+    deletion=input("Enter command code (1-12) to delete data: ")
+    if deletion=="1":
+        pathway=input("Enter command code (1-2)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteUserWName(_conn, deletion)
+        elif pathway=="2":
+            deletion=input("Enter valid password: ")
+            deleteUserWPassword(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="2":
+        pathway=input("Enter command code (1-3)")
+        if pathway=="1":
+            deletion_i=float(input("Enter valid number: "))
+            deleteReviewWKey(_conn, deletion_i)
+        elif pathway=="2":
+            deletion=input("Enter name: ")
+            deleteReviewWAuthor(_conn, deletion)
+        elif pathway=="3":
+            deletion=input("Enter movie title: ")
+            deleteReviewWMovieTitle(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="3":
+        pathway=input("Enter command code (1-3)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteDirectorWName(_conn, deletion)
+        elif pathway=="2":
+            deletion=float(input("Enter valid year: "))
+            deleteDirectorWYear(_conn, deletion)
+        elif pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteDirectorWFirstFilm(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="4":
+        pathway=input("Enter command code (1-3)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteProducerWName(_conn, deletion)
+        elif pathway=="2":
+            deletion_i=float(input("Enter valid year: "))
+            deleteProducerWYear(_conn, deletion_i)
+        elif pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteProducerWFirstFilm(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="5":
+        pathway=input("Enter command code (1-3)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteActorWName(_conn, deletion)
+        elif pathway=="2":
+            deletion_i=float(input("Enter valid year: "))
+            deleteActorWYear(_conn, deletion_i)
+        elif pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteActorWFirstFilm(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="6":
+        pathway=input("Enter command code (1-3)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteComposerWName(_conn, deletion)
+        elif pathway=="2":
+            deletion_i=float(input("Enter valid year: "))
+            deleteComposerWYear(_conn, deletion_i)
+        elif pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteComposerWFirstFilm(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="7":
+        pathway=input("Enter command code (1-4)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteStudioWName(_conn, deletion)
+        elif pathway=="2":
+            deletion_i=float(input("Enter valid year: "))
+            deleteStudioWYear(_conn, deletion_i)
+        elif pathway=="3":
+            deletion=input("Enter valid president: ")
+            deleteStudioWPresident(_conn, deletion)
+        elif pathway=="4":
+            deletion=input("Enter valid title: ")
+            deleteStudioWFirstFilm(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="8":
+        pathway=input("Enter command code (1-4)")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deletePresidentWName(_conn, deletion)
+        elif pathway=="2":
+            deletion_i=float(input("Enter valid year: "))
+            deletePresidentWYear(_conn, deletion_i)
+        elif pathway=="3":
+            deletion=input("Enter valid studio: ")
+            deletePresidentWStudio(_conn, deletion)
+        elif pathway=="4":
+            deletion_i=float(input("Enter valid number: "))
+            deletePresidentWYearsR(_conn, deletion_i)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="9":
+        pathway=input("Enter command code (1-15): ")
+        if pathway=="1":
+            deletion=input("Enter valid title: ")
+            deleteMovieWTitle(_conn, deletion)
+        elif pathway=="2":
+            deletion=input("Enter valid genre: ")
+            deleteMovieWGenre(_conn, deletion)
+        elif pathway=="3":
+            deletion_i=float(input("Enter valid year: "))
+            deleteMovieWYear(_conn, deletion)
+        elif pathway=="4":
+            deletion_i=float(input("Enter valid revenue: "))
+            deleteMovieWRevenue(_conn, deletion_i)
+        elif pathway=="5":
+            deletion=input("Enter valid director: ")
+            deleteMovieWDirector(_conn, deletion)
+        elif pathway=="6":
+            deletion=input("Enter valid director: ")
+            deleteMovieWDirectorTwo(_conn, deletion)
+        elif pathway=="7":
+            deletion=input("Enter valid producer: ")
+            deleteMovieWProducer(_conn, deletion)
+        elif pathway=="8":
+            deletion=input("Enter valid producer: ")
+            deleteMovieWProducerTwo(_conn, deletion)
+        elif pathway=="9":
+            deletion=input("Enter valid producer: ")
+            deleteMovieWProducerThree(_conn, deletion)
+        elif pathway=="10":
+            deletion=input("Enter valid actor: ")
+            deleteMovieWActor(_conn, deletion)
+        elif pathway=="11":
+            deletion=input("Enter valid actor: ")
+            deleteMovieWActorTwo(_conn, deletion)
+        elif pathway=="12":
+            deletion=input("Enter valid actor: ")
+            deleteMovieWActorThree(_conn, deletion)
+        elif pathway=="13":
+            deletion=input("Enter valid composer: ")
+            deleteMovieWComposer(_conn, deletion)
+        elif pathway=="14":
+            deletion=input("Enter valid studio: ")
+            deleteMovieWStudio(_conn, deletion)
+        elif pathway=="15":
+            deletion=float(input("Enter valid review key: "))
+            deleteMovieWReview(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="10":
+        pathway=input("Enter command code (1-11): ")
+        if pathway=="1":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWTitle(_conn, deletion)
+        elif pathway=="2":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWDirector(_conn, deletion)
+        if pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWDirectorTwo(_conn, deletion)
+        if pathway=="4":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWProducer(_conn, deletion)
+        if pathway=="5":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWProducerTwo(_conn, deletion)
+        if pathway=="6":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWProducerThree(_conn, deletion)
+        if pathway=="7":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWActor(_conn, deletion)
+        if pathway=="8":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWActorTwo(_conn, deletion)
+        if pathway=="9":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWActorThree(_conn, deletion)
+        if pathway=="10":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWComposer(_conn, deletion)
+        if pathway=="11":
+            deletion=input("Enter valid title: ")
+            deleteEarliestHereWStudio(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="11":
+        pathway=input("Enter command code (1-18): ")
+        if pathway=="1":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWName(_conn, deletion)
+        elif pathway=="2":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWDirector(_conn, deletion)
+        elif pathway=="3":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWDirectorTwo(_conn, deletion)
+        elif pathway=="4":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWDirectorThree(_conn, deletion)
+        elif pathway=="5":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWDirectorFour(_conn, deletion)
+        elif pathway=="6":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWDirectorFive(_conn, deletion)
+        elif pathway=="7":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWProducer(_conn, deletion)
+        elif pathway=="8":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWProducerTwo(_conn, deletion)
+        elif pathway=="9":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWProducerThree(_conn, deletion)
+        elif pathway=="10":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWProducerFour(_conn, deletion)
+        elif pathway=="11":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWProducerFive(_conn, deletion)
+        elif pathway=="12":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWActor(_conn, deletion)
+        elif pathway=="13":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWActorTwo(_conn, deletion)
+        elif pathway=="14":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWActorThree(_conn, deletion)
+        elif pathway=="15":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWActorFour(_conn, deletion)
+        elif pathway=="16":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWActorFive(_conn, deletion)
+        elif pathway=="17":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWComposer(_conn, deletion)
+        elif pathway=="18":
+            deletion=input("Enter valid name: ")
+            deleteWorkedWithWComposerTwo(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    elif deletion=="12":
+        pathway=input("Enter command code (1-29): ")
+        if pathway=="1":
+            deletion_i=float(input("Enter valid number: "))
+            deleteYear(_conn, deletion_i)
+        elif pathway=="2":
+            deletion=input("Enter valid title: ")
+            deleteYearWMovie(_conn, deletion)
+        elif pathway=="3":
+            deletion=input("Enter valid title: ")
+            deleteYearWMovieTwo(_conn, deletion)
+        elif pathway=="4":
+            deletion=input("Enter valid title: ")
+            deleteYearWMovieThree(_conn, deletion)
+        elif pathway=="5":
+            deletion=input("Enter valid title: ")
+            deleteYearWMovieFour(_conn, deletion)
+        elif pathway=="6":
+            deletion=input("Enter valid title: ")
+            deleteYearWMovieFive(_conn, deletion)
+        elif pathway=="7":
+            deletion=input("Enter valid director: ")
+            deleteYearWDirector(_conn, deletion)
+        elif pathway=="8":
+            deletion=input("Enter valid director: ")
+            deleteYearWDirectorTwo(_conn, deletion)
+        elif pathway=="9":
+            deletion=input("Enter valid director: ")
+            deleteYearWDirectorThree(_conn, deletion)
+        elif pathway=="10":
+            deletion=input("Enter valid director: ")
+            deleteYearWDirectorFour(_conn, deletion)
+        elif pathway=="11":
+            deletion=input("Enter valid director: ")
+            deleteYearWDirectorFive(_conn, deletion)
+        elif pathway=="12":
+            deletion=input("Enter valid producer: ")
+            deleteYearWProducer(_conn, deletion)
+        elif pathway=="13":
+            deletion=input("Enter valid producer: ")
+            deleteYearWProducerTwo(_conn, deletion)
+        elif pathway=="14":
+            deletion=input("Enter valid producer: ")
+            deleteYearWProducerThree(_conn, deletion)
+        elif pathway=="15":
+            deletion=input("Enter valid producer: ")
+            deleteYearWProducerFour(_conn, deletion)
+        elif pathway=="16":
+            deletion=input("Enter valid producer: ")
+            deleteYearWProducerFive(_conn, deletion)
+        elif pathway=="17":
+            deletion=input("Enter valid actor: ")
+            deleteYearWActor(_conn, deletion)
+        elif pathway=="18":
+            deletion=input("Enter valid actor: ")
+            deleteYearWActorTwo(_conn, deletion)
+        elif pathway=="19":
+            deletion=input("Enter valid actor: ")
+            deleteYearWActorThree(_conn, deletion)
+        elif pathway=="20":
+            deletion=input("Enter valid actor: ")
+            deleteYearWActorFour(_conn, deletion)
+        elif pathway=="21":
+            deletion=input("Enter valid actor: ")
+            deleteYearWActorFive(_conn, deletion)
+        elif pathway=="22":
+            deletion=input("Enter valid number: ")
+            deleteYearWComposer(_conn, deletion)
+        elif pathway=="23":
+            deletion=input("Enter valid number: ")
+            deleteYearWComposerTwo(_conn, deletion)
+        elif pathway=="24":
+            deletion=input("Enter valid number: ")
+            deleteYearWComposerThree(_conn, deletion)
+        elif pathway=="25":
+            deletion=input("Enter valid number: ")
+            deleteYearWComposerFour(_conn, deletion)
+        elif pathway=="26":
+            deletion=input("Enter valid number: ")
+            deleteYearWComposerFour(_conn, deletion)
+        elif pathway=="27":
+            deletion=input("Enter valid number: ")
+            deleteYearWPresident(_conn, deletion)
+        elif pathway=="28":
+            deletion=input("Enter valid number: ")
+            deleteYearWStudio(_conn, deletion)
+        elif pathway=="29":
+            deletion=input("Enter valid number: ")
+            deleteYearWStudioTwo(_conn, deletion)
+        else:
+            print("ERROR: Invalid Command")
+    else:
+        print("ERROR: Invalid command")    
         
+def insertTuple(_conn):
+    inserting=input("Enter command code (1-12) to add data: ")
+    if inserting=="1":
+        username=input("Insert username: ")
+        password=input("Insert password: ")
+        insertUser(_conn, username, password)
+    elif inserting=="2":
+        reviewKey=input("Insert review key:")
+        author=input("Insert author: ")
+        movieTitle=input("Insert movie: ")
+        insertReview(_conn, reviewKey, author, movieTitle)
+    elif inserting=="3":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        firstFilm=input("Insert earliest film here: ")
+        insertDirector(_conn, name, year, firstFilm)
+    elif inserting=="4":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        firstFilm=input("Insert earliest film here: ")
+        insertProducer(_conn, name, year, firstFilm)
+    elif inserting=="5":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        firstFilm=input("Insert earliest film here: ")
+        insertActor(_conn, name, year, firstFilm)
+    elif inserting=="6":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        firstFilm=input("Insert earliest film here: ")
+        insertComposer(_conn, name, year, firstFilm)
+    elif inserting=="7":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        president=input("Insert president: ")
+        firstFilm=input("Insert earliest film here: ")
+        insertStudio(_conn, name, year, president, firstFilm)
+    elif inserting=="8":
+        name=input("Insert name: ")
+        year=float(input("Insert year: "))
+        studio=input("Insert studio: ")
+        yearsRan=input("Insert length of run: ")
+        insertPresident(_conn, name, year, studio, yearsRan)
+    elif inserting=="9":
+        name=input("Insert name: ")
+        genre=input("Insert genre: ")
+        year=float(input("Insert year: "))
+        revenue=float(input("Insert revenue: "))
+        directorO=input("Insert director: ")
+        directorTw=input("Insert second director (press space+enter if otherwise): ")
+        producerO=input("Insert first producer: ")
+        producerTw=input("Insert second producer (press space+enter if otherwise): ")
+        producerTr=input("Insert third producer (press space+enter if otherwise): ")
+        actorO=input("Insert first actor: ")
+        actorTw=input("Insert second actor: ")
+        actorTr=input("Insert third actor (press space+enter if otherwise): ")
+        composer=input("Insert composer: ")
+        studio=input("Insert studio: ")
+        review=input("Insert review key: ")
+        insertMovie(_conn, name, genre, year, revenue, directorO, directorTw, producerO,
+                    producerTw, producerTr, actorO, actorTw, actorTr, composer, studio,
+                    review)
+    elif inserting=="10":
+        name=input("insert name")
+        directorO=input("Insert director: ")
+        directorTw=input("Insert second director (press space+enter if otherwise): ")
+        producerO=input("Insert first producer: ")
+        producerTw=input("Insert second producer (press space+enter if otherwise): ")
+        producerTr=input("Insert third producer (press space+enter if otherwise): ")
+        actorO=input("Insert first actor: ")
+        actorTw=input("Insert second actor: ")
+        actorTr=input("Insert third actor (press space+enter if otherwise): ")
+        composer=input("Insert composer: ")
+        studio=input("Insert studio: ")
+        insertEarliestHere(_conn, name, directorO, directorTw, producerO,
+                    producerTw, producerTr, actorO, actorTw, actorTr, composer)
+    elif inserting=="11":
+        name=input("insert name")
+        print("Press space+enter if needed\n")
+        directorO=input("Insert director: ")
+        directorTw=input("Insert director: ")
+        directorTr=input("Insert director: ")
+        directorFo=input("Insert director: ")
+        directorFi=input("Insert director: ")
+        producerO=input("Insert producer: ")
+        producerTw=input("Insert producer: ")
+        producerTr=input("Insert producer: ")
+        producerFo=input("Insert producer: ")
+        producerFi=input("Insert producer: ")
+        actorO=input("Insert movie:")
+        actorTw=input("Insert movie:")
+        actorTr=input("Insert movie:")
+        actorFo=input("Insert movie:")
+        actorFi=input("Insert movie:")
+        composerO=input("Insert composer: ")
+        composerTw=input("Insert composer: ")
+        insertWorkedWith(_conn, name, directorO, 
+                   directorTw, directorTr, directorFo, directorFi, producerO, producerTw, 
+                   producerTr, producerFo, producerFi, actorO, actorTw, actorTr, 
+                   actorFo, actorFi, composerO, composerTw)
+    elif inserting=="12":
+        year=float(input("Insert year: "))
+        print("Press space+enter if needed\n")
+        movieO=input("Insert movie:")
+        movieTw=input("Insert movie:")
+        movieTr=input("Insert movie:")
+        movieFo=input("Insert movie:")
+        movieFi=input("Insert movie:")
+        directorO=input("Insert director: ")
+        directorTw=input("Insert director: ")
+        directorTr=input("Insert director: ")
+        directorFo=input("Insert director: ")
+        directorFi=input("Insert director: ")
+        producerO=input("Insert producer: ")
+        producerTw=input("Insert producer: ")
+        producerTr=input("Insert producer: ")
+        producerFo=input("Insert producer: ")
+        producerFi=input("Insert producer: ")
+        actorO=input("Insert movie:")
+        actorTw=input("Insert movie:")
+        actorTr=input("Insert movie:")
+        actorFo=input("Insert movie:")
+        actorFi=input("Insert movie:")
+        composerO=input("Insert composer: ")
+        composerTw=input("Insert composer: ")
+        composerTr=input("Insert composer: ")
+        composerFo=input("Insert composer: ")
+        composerFi=input("Insert composer: ")
+        president=input("Insert president: ")
+        studio=input("Insert studio: ")
+        studioTw=input("Insert studio")
+        insertYear(_conn, year, movieO, movieTw, movieTr, movieFo, movieFi, directorO, 
+                   directorTw, directorTr, directorFo, directorFi, producerO, producerTw, 
+                   producerTr, producerFo, producerFi, actorO, actorTw, actorTr, 
+                   actorFo, actorFi, composerO, composerTw, composerTr, composerFo, 
+                   composerFi, president, studio, studioTw)
+        
+def updateTuple(_conn):
+    updating=input("Enter command code (1-12) to edit data: ")
+    if updating=="1":
+        name=input("Enter username: ")
+        updating=input("Enter command code (1-2): ")
+        if updating=="1":
+            up=input("Enter new username: ")
+            updateUserName(_conn, up, name)
+        elif updating=="2":
+            up=input("Enter new password: ")
+            updateUserPassword(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="2":
+        name=input("Enter review key: ")
+        updating=input("Enter command code (1-2): ")
+        if updating=="1":
+            up=input("Enter new author: ")
+            updateReviewAuthor(_conn, up, name)
+        elif updating=="2":
+            up=input("Enter new movie title: ")
+            updateReviewMovie(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="3":
+        name=input("Enter director name: ")
+        updating=input("Enter command code (1-3): ")
+        if updating=="1":
+            up_i=float(input("Enter new birth year: "))
+            updateDirectorName(_conn, up_i, name)
+        elif updating=="2":
+            up=input("Enter new birth year: ")
+            updateDirectorYear(_conn,  up, name)
+        elif updating=="3":
+            up=input("Enter new earliest movie title: ")
+            updateDirectorFirstFilm(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="4":
+        name=input("Enter producer name: ")
+        updating=input("Enter command code (1-3): ")
+        if updating=="1":
+            up=input("Enter new name: ")
+            updateProducerName(_conn, up, name)
+        elif updating=="2":
+            up_i=float(input("Enter new birth year: "))
+            updateProducerYear(_conn, up_i, name)
+        elif updating=="3":
+            up=input("Enter new earliest movie title: ")
+            updateProducerFirstFilm(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="5":
+        name=input("Enter actor name: ")
+        updating=input("Enter command code (1-3): ")
+        if updating=="1":
+            up=input("Enter new name: ")
+            updateActorName(_conn, up, name)
+        elif updating=="2":
+            up_i=float(input("Enter new birth year: "))
+            updateActorYear(_conn, up, name)
+        elif updating=="3":
+            up=input("Enter new earliest movie title: ")
+            updateActorFirstFilm(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="6":
+        name=input("Enter composer name: ")
+        updating=input("Enter command code (1-3): ")
+        if updating=="1":
+            up=input("Enter new name:")
+            updateComposerName(_conn, up, name)
+        elif updating=="2":
+            up_i=float(input("Enter new birth year: "))
+            updateComposerYear(_conn, up_i, name)
+        elif updating=="3":
+            up=input("Enter new earliest movie title: ")
+            updateComposerFirstFilm(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="7":
+        name=input("Enter studio name: ")
+        updating=input("Enter command code (1-4): ")
+        if updating=="1":
+            up=input("Enter new name: ")
+            updateStudioName(_conn, up, name)
+        elif updating=="2":
+            up_i=float(input("Enter new founding year: "))
+            updateStudioName(_conn, up_i, name)
+        elif updating=="3":
+            up=input("Enter new president: ")
+            updateStudioPresident(_conn, up, name)
+        elif updating=="4":
+            up=input("Enter new earliest film: ")
+            updateStudioFirstFilm(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="8":
+        name=input("Enter president name: ")
+        updating=input("Enter command code (1-4): ")
+        if updating=="1":
+            up=input("Enter new name: ")
+            updatePresidentName(_conn, up, name)
+        elif updating=="2":
+            up_i=float(input("Enter new birth year: "))
+            updatePresidentYear(_conn, up_i, name)
+        elif updating=="3":
+            up=input("Enter new studio: ")
+            updatePresidentStudio(_conn, up, name)
+        elif updating=="4":
+            up_i=float(input("Enter new run length: "))
+            updatePresidentYearsRan(_conn, up_i, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="9":
+        name=input("Enter movie name: ")
+        updating=input("Enter command code (1-15): ")
+        if updating=="1":
+            up=input("Enter new title: ")
+            updateMovieTitle(_conn, up, name)
+        elif updating=="2":
+            up=input("Enter new genre: ")
+            updateMovieGenre(_conn, up, name)
+        elif updating=="3":
+            up_i=float(input("Enter new release year: "))
+            updateMovieYear(_conn, up, name)
+        elif updating=="4":
+            up_i=float(input("Enter new revenue: "))
+            updateMovieRevenue(_conn, up, name)
+        elif updating=="5":
+            up=input("Enter new director: ")
+            updateMovieDirector(_conn, up, name)
+        elif updating=="6":
+            up=input("Enter new director (space+enter if needed): ")
+            updateMovieDirectorTwo(_conn, up, name)
+        elif updating=="7":
+            up=input("Enter new actor: ")
+            updateMovieActor(_conn, up, name)
+        elif updating=="8":
+            up=input("Enter new actor (space+enter if needed): ")
+            updateMovieActorTwo(_conn, up, name)
+        elif updating=="9":
+            up=input("Enter new actor (space+enter if needed): ")
+            updateMovieActorThree(_conn, up, name)
+        elif updating=="10":
+            up=input("Enter new producer: ")
+            updateMovieProducer(_conn, up, name)
+        elif updating=="11":
+            up=input("Enter new producer (space+enter if needed): ")
+            updateMovieProducerTwo(_conn, up, name)
+        elif updating=="12":
+            up=input("Enter new producer (space+enter if needed): ")
+            updateMovieProducerThree(_conn, up, name)
+        elif updating=="13":
+            up=input("Enter new composer: ")
+            updateMovieComposer(_conn, up, name)
+        elif updating=="14":
+            up=input("Enter new studio: ")
+            updateMovieStudio(_conn, up, name)
+        elif updating=="15":
+            up=input("Enter new review key: ")
+            updateMovieReview(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="10":
+        name=input("Enter earliest film record name: ")
+        updating=input("Enter command code (1-11): ")
+        if updating=="1":
+            up=input("Enter new title: ")
+            updateEarliestHereTitle(_conn, up, name)
+        elif updating=="2":
+            up=input("Enter new director: ")
+            updateEarliestHereDirector(_conn, up, name)
+        elif updating=="3":
+            up=input("Enter new director: ")
+            updateEarliestHereDirectorTwo(_conn, up, name)
+        elif updating=="4":
+            up=input("Enter new producer: ")
+            updateEarliestHereProducer(_conn, up, name)
+        elif updating=="5":
+            up=input("Enter new producer: ")
+            updateEarliestHereProducerTwo(_conn, up, name)
+        elif updating=="6":
+            up=input("Enter new producer: ")
+            updateEarliestHereProducerThree(_conn, up, name)
+        elif updating=="7":
+            up=input("Enter new actor: ")
+            updateEarliestHereActor(_conn, up, name)
+        elif updating=="8":
+            up=input("Enter new actor: ")
+            updateEarliestHereActorTwo(_conn, up, name)
+        elif updating=="9":
+            up=input("Enter new actor: ")
+            updateEarliestHereActorThree(_conn, up, name)
+        elif updating=="10":
+            up=input("Enter new composer: ")
+            updateEarliestHereComposer(_conn, up, name)
+        elif updating=="11":
+            up=input("Enter new studio: ")
+            updateEarliestHereStudio(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="11":
+        name=input("Enter person's name: ")
+        updating=input("Enter command code (1-18): ")
+        if updating=="1":
+            up=input("Enter new name: ")
+            updateWorkedWithName(_conn, up, name)
+        elif updating=="2":
+            up=input("Enter new director: ")
+            updateWorkedWithDirector(_conn, up, name)
+        elif updating=="3":
+            up=input("Enter new director: ")
+            updateWorkedWithDirectorTwo(_conn, up, name)
+        elif updating=="4":
+            up=input("Enter new director: ")
+            updateWorkedWithDirectorThree(_conn, up, name)
+        elif updating=="5":
+            up=input("Enter new director: ")
+            updateWorkedWithDirectorFour(_conn, up, name)
+        elif updating=="6":
+            up=input("Enter new director: ")
+            updateWorkedWithDirectorFive(_conn, up, name)
+        elif updating=="7":
+            up=input("Enter new producer: ")
+            updateWorkedWithProducer(_conn, up, name)
+        elif updating=="8":
+            up=input("Enter new producer: ")
+            updateWorkedWithProducerTwo(_conn, up, name)
+        elif updating=="9":
+            up=input("Enter new producer: ")
+            updateWorkedWithProducerThree(_conn, up, name)
+        elif updating=="10":
+            up=input("Enter new producer: ")
+            updateWorkedWithProducerFour(_conn, up, name)
+        elif updating=="11":
+            up=input("Enter new producer: ")
+            updateWorkedWithProducerFive(_conn, up, name)
+        elif updating=="12":
+            up=input("Enter new actor: ")
+            updateWorkedWithActor(_conn, up, name)
+        elif updating=="13":
+            up=input("Enter new actor: ")
+            updateWorkedWithActorTwo(_conn, up, name)
+        elif updating=="14":
+            up=input("Enter new actor: ")
+            updateWorkedWithActorThree(_conn, up, name)
+        elif updating=="15":
+            up=input("Enter new actor: ")
+            updateWorkedWithActorFour(_conn, up, name)
+        elif updating=="16":
+            up=input("Enter new actor: ")
+            updateWorkedWithActorFive(_conn, up, name)
+        elif updating=="17":
+            up=input("Enter new composer: ")
+            updateWorkedWithComposer(_conn, up, name)
+        elif updating=="18":
+            up=input("Enter new composer: ")
+            updateWorkedWithComposerTwo(_conn, up, name)
+        else: 
+            print("ERROR: Invalid command")
+    if updating=="12":
+        year=float(input("Enter year: "))
+        updating=input("Enter command code (1-28): ") 
+        if updating=="1":
+            up=input("Enter new movie: ")
+            updateYearMovie(_conn, up, year)
+        elif updating=="2":
+            up=input("Enter new movie: ")
+            updateYearMovieTwo(_conn, up, year)
+        elif updating=="3":
+            up=input("Enter new movie: ")
+            updateYearMovieThree(_conn, up, year)
+        elif updating=="4":
+            up=input("Enter new movie: ")
+            updateYearMovieFour(_conn, up, year)
+        elif updating=="5":
+            up=input("Enter new movie: ")
+            updateYearMovieFive(_conn, up, year)
+        elif updating=="6":
+            up=input("Enter new director: ")
+            updateYearDirector(_conn, up, year)
+        elif updating=="7":
+            up=input("Enter new director: ")
+            updateYearDirectorTwo(_conn, up, year)
+        elif updating=="8":
+            up=input("Enter new director: ")
+            updateYearDirectorThree(_conn, up, year)
+        elif updating=="9":
+            up=input("Enter new director: ")
+            updateYearDirectorFour(_conn, up, year)
+        elif updating=="10":
+            up=input("Enter new director: ")
+            updateYearDirectorFive(_conn, up, year)
+        elif updating=="11":
+            up=input("Enter new producer: ")
+            updateYearProducer(_conn, up, year)
+        elif updating=="12":
+            up=input("Enter new producer: ")
+            updateYearProducerTwo(_conn, up, year)
+        elif updating=="13":
+            up=input("Enter new producer: ")
+            updateYearProducerThree(_conn, up, year)
+        elif updating=="14":
+            up=input("Enter new producer: ")
+            updateYearProducerFour(_conn, up, year)
+        elif updating=="15":
+            up=input("Enter new producer: ")
+            updateYearProducerFive(_conn, up, year)
+        elif updating=="16":
+            up=input("Enter new actor: ")
+            updateYearActor(_conn, up, year)
+        elif updating=="17":
+            up=input("Enter new actor: ")
+            updateYearActorTwo(_conn, up, year)
+        elif updating=="18":
+            up=input("Enter new actor: ")
+            updateYearActorThree(_conn, up, year)
+        elif updating=="19":
+            up=input("Enter new actor: ")
+            updateYearActorFour(_conn, up, year)
+        elif updating=="20":
+            up=input("Enter new actor: ")
+            updateYearActorFive(_conn, up, year)
+        elif updating=="21":
+            up=input("Enter new composer: ")
+            updateYearComposer(_conn, up, year)
+        elif updating=="22":
+            up=input("Enter new composer: ")
+            updateYearComposer(_conn, up, year)
+        elif updating=="23":
+            up=input("Enter new composer: ")
+            updateYearComposer(_conn, up, year)
+        elif updating=="24":
+            up=input("Enter new composer: ")
+            updateYearComposer(_conn, up, year)
+        elif updating=="25":
+            up=input("Enter new composer: ")
+            updateYearComposer(_conn, up, year)
+        elif updating=="26":
+            up=input("Enter new president: ")
+            updateYearPresident(_conn, up, year)
+        elif updating=="27":
+            up=input("Enter new studio: ")
+            updateYearStudio(_conn, up, year)
+        elif updating=="28":
+            up=input("Enter new studio: ")
+            updateYearStudioTwo(_conn, up, year)
+        else: 
+            print("ERROR: Invalid command")
+    else: 
+        print("ERROR: Invalid command")
+        
+            
 def main():
     database = r"project.sqlite"
     
     # create a database connection
     conn = openConnection(database)
     with conn:
-        # dropTables(conn)
-        # createTables(conn)
-        # populateTables(conn)
+        dropTables(conn)
+        createTables(conn)
+        populateTables(conn)
         
-        trial1(conn)
-        trial2(conn)
-        trial3(conn)
-        trial4(conn)
-        trial5(conn)
-        trial6(conn)
-        trial7(conn)
-        trial8(conn)
-        trial9(conn)
-        trial10(conn)
-        trial11(conn)
-        trial12(conn)
-        trial13(conn)
-        trial14(conn)
-        trial15(conn)
-        trial16(conn)
-        trial17(conn)
-        trial18(conn)
-        trial19(conn)
-        trial20(conn)
+        trials=input("Enter command code (1-20, I/D): ")
+        
+        if trials=='1':
+            enter_i=float(input("Enter a number: "))
+            trial1(conn, enter_i)
+        elif trials=='2':
+            enter=input("Enter a reviewer: ")
+            trial2(conn, enter)
+        elif trials=='3':
+            trial3(conn)
+        elif trials=='4':
+            trial4(conn)
+        elif trials=='5':
+            trial5(conn)
+        elif trials=='6':
+            enter_i=float(input("Enter a number: "))
+            trial6(conn, enter_i)
+        elif trials=='7':
+            trial7(conn)
+        elif trials=='8':
+            enter=input("Enter a director: ")
+            trial8(conn, enter)
+        elif trials=='9':
+            trial9(conn)
+        elif trials=='10':
+            trial10(conn)
+        elif trials=='11':
+            trial11(conn)
+        elif trials=='12':
+            trial12(conn)
+        elif trials=='13':
+            trial13(conn)
+        elif trials=='14':
+            trial14(conn)
+        elif trials=='15':
+            trial15(conn)
+        elif trials=='16':
+            trial16(conn)
+        elif trials=='17':
+            trial17(conn)
+        elif trials=='18':
+            trial18(conn)
+        elif trials=='19':
+            trial19(conn)
+        elif trials=='20':
+            trial20(conn)
+        elif trials=='I':
+            insertTuple(conn)
+        elif trials=="U":
+            updateTuple(conn)
+        elif trials=='D':
+            deleteTuple(conn)
+        else:
+            print("ERROR: Invalid command")
+        
 
     closeConnection(conn, database)
 
