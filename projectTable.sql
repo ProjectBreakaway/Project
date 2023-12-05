@@ -3,47 +3,47 @@ CREATE TABLE user (
     u_Password varchar(30) NOT NULL
 );
 CREATE TABLE review (
-    r_reviewKey decimal(4, 0) not null, 
+    r_reviewKey integer not null, 
     r_author varchar(20) not null, 
     r_movieTitle varchar(40) not null
 );
 CREATE TABLE director(
     d_Name varchar(30) not null, 
-    d_Year decimal(4, 0) not null,
+    d_Year integer not null,
     d_FirstFilm varchar(40) not null
 );
 CREATE TABLE producer(
     p_Name varchar(30) not null, 
-    p_Year decimal(4, 0) not null,
+    p_Year integer not null,
     p_FirstFilm varchar(40) not null
 );
 CREATE TABLE actor(
     a_Name varchar(30) not null, 
-    a_Year decimal(4, 0) not null,
+    a_Year integer not null,
     a_FirstFilm varchar(40) not null
 );
 CREATE TABLE composer(
     c_Name varchar(30) not null, 
-    c_Year decimal(4, 0) not null,
+    c_Year integer not null,
     c_FirstFilm varchar(40) not null
 );
 CREATE TABLE studio(
     s_Name varchar(30) not null, 
-    s_Year decimal(4, 0) not null,
+    s_Year integer not null,
     s_President varchar(30) not null,
     s_FirstFilm varchar(40) not null
 );
 CREATE TABLE president(
     pre_Name varchar(30) not null,
-    pre_Year decimal(4, 0) not null, 
+    pre_Year integer not null, 
     pre_Studio varchar(30) not null,
-    pre_YearsRan decimal(3) not null
+    pre_YearsRan integer not null
 );
 CREATE TABLE movie(
     m_Title varchar(40) not null, 
     m_genre char(10) not null, 
-    m_Year decimal(4, 0) not null, 
-    m_Revenue decimal(12, 2) not null, 
+    m_Year integer not null, 
+    m_Revenue integer not null, 
     m_Director varchar(40) not null,
     m_DirectorTwo varchar(40),
     m_Producer varchar(40) not null,
@@ -54,7 +54,7 @@ CREATE TABLE movie(
     m_ActorThree varchar(40),
     m_Composer varchar(40) not null,
     m_Studio varchar(40) not null,
-    m_Review decimal(4, 0)
+    m_Review integer
 );
 CREATE TABLE earliestHere (
     e_Title varchar(40) not null,
@@ -90,7 +90,7 @@ CREATE TABLE workedWith(
     w_ComposerTwo varchar(40)
 );
 CREATE TABLE year(
-    y_year decimal(4, 0) not null, 
+    y_year integer not null, 
     y_Movie varchar(40), 
     y_MovieTwo varchar(40),
     y_MovieThree varchar(40),
