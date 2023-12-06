@@ -54,7 +54,7 @@ CREATE TABLE movie(
     m_ActorThree varchar(40),
     m_Composer varchar(40) not null,
     m_Studio varchar(40) not null,
-    m_Review integer
+    m_Review integer not null
 );
 CREATE TABLE earliestHere (
     e_Title varchar(40) not null,

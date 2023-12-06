@@ -3047,7 +3047,7 @@ def deleteYearWMovie(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_Movie =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3062,7 +3062,7 @@ def deleteYearWMovieTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_MovieTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3077,7 +3077,7 @@ def deleteYearWMovieThree(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_MovieThree =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3092,7 +3092,7 @@ def deleteYearWMovieFour(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_MovieFour =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3107,7 +3107,7 @@ def deleteYearWMovieFive(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_MovieFive =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3117,8 +3117,6 @@ def deleteYearWMovieFive(_conn, _del):
         _conn.rollback()
         print(e)
     print("++++++++++++++++++++++++++++++++++")
-    
-
     
 def deleteYearWDirector(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
@@ -3139,7 +3137,7 @@ def deleteYearWDirectorTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_DirectorTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3154,7 +3152,7 @@ def deleteYearWDirectorThree(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_DirectorThree =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3169,7 +3167,7 @@ def deleteYearWDirectorFour(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_DirectorFour =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3184,7 +3182,7 @@ def deleteYearWDirectorFive(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_DirectorFive =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3199,7 +3197,7 @@ def deleteYearWProducer(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_Producer =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3214,7 +3212,7 @@ def deleteYearWProducerTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ProducerTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3229,7 +3227,7 @@ def deleteYearWProducerThree(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ProducerThree =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3244,7 +3242,7 @@ def deleteYearWProducerFour(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ProducerFour =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3259,7 +3257,7 @@ def deleteYearWProducerFive(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ProducerFive =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3274,7 +3272,7 @@ def deleteYearWActor(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_Actor =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3289,7 +3287,7 @@ def deleteYearWActorTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ActorTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3304,7 +3302,7 @@ def deleteYearWActorThree(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ActorThree =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3319,7 +3317,7 @@ def deleteYearWActorFour(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ActorFour =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3334,7 +3332,7 @@ def deleteYearWActorFive(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ActorFive =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3349,7 +3347,7 @@ def deleteYearWComposer(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_Composer =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3364,7 +3362,7 @@ def deleteYearWComposerTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ComposerTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3379,7 +3377,7 @@ def deleteYearWComposerThree(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ComposerThree =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3394,7 +3392,7 @@ def deleteYearWComposerFour(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ComposerFour =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3409,7 +3407,7 @@ def deleteYearWComposerFive(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_ComposerFive =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3424,7 +3422,7 @@ def deleteYearWPresident(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_President =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3439,7 +3437,7 @@ def deleteYearWStudio(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_Studio =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3454,7 +3452,7 @@ def deleteYearWStudioTwo(_conn, _del):
     print("++++++++++++++++++++++++++++++++++")
     print("Delete Year")
     try:
-        sql="delete from year where y_year =?"
+        sql="delete from year where y_StudioTwo =?"
         args=[_del]
         _conn.execute(sql, args)
 
@@ -3912,6 +3910,7 @@ def trial1(_conn, _in):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial2(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("Presidents of _ reviews ")
@@ -3966,6 +3965,7 @@ def trial3(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial4(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Revenue by genre ")
@@ -3993,6 +3993,7 @@ def trial4(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial5(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Films of distinct genre: ")
@@ -4021,6 +4022,7 @@ def trial5(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial6(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("President and film years ")
@@ -4048,6 +4050,7 @@ def trial6(_conn, _in):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial7(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("years without producers as directors")
@@ -4078,6 +4081,7 @@ def trial7(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial8(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
     print("movies by collaborators ")
@@ -4106,6 +4110,7 @@ def trial8(_conn, _in):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial9(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("President birth years of those who didn't work with producer/director combo: ")
@@ -4138,6 +4143,7 @@ def trial9(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial10(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Obscure profit")
@@ -4166,6 +4172,7 @@ def trial10(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial11(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Mainstream Profit")
@@ -4195,6 +4202,7 @@ def trial11(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial12(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Distinct Film Genres")
@@ -4225,6 +4233,7 @@ def trial12(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial13(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Establishing years of movies, studios, and presidents  ")
@@ -4252,6 +4261,7 @@ def trial13(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial14(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Recent Career Genre ")
@@ -4279,6 +4289,7 @@ def trial14(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial15(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Presidents of collaborators ")
@@ -4319,6 +4330,7 @@ def trial15(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial16(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Sorted Films ")
@@ -4344,6 +4356,7 @@ def trial16(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial17(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Presidents of Obscure Films ")
@@ -4371,6 +4384,7 @@ def trial17(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial18(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Producer's earliest films in database")
@@ -4399,6 +4413,7 @@ def trial18(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial19(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Earliest Titles ")
@@ -4429,6 +4444,7 @@ def trial19(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 def trial20(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Shared Genres")
@@ -4457,6 +4473,248 @@ def trial20(_conn):
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial21(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Users")
+
+    try:
+        sql = """select u_Username
+                from user
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}'.format("username")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} '.format(row[0])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial22(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Reviews")
+
+    try:
+        sql = """select *
+                from review
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10} {:>10}'.format("reviewkey, author, title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10} {:>10} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial23(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Directors")
+
+    try:
+        sql = """select *
+                from director
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10} {:>20}'.format("name, birth, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10} {:>20} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial24(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Producer")
+
+    try:
+        sql = """select *
+                from producer
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10} {:>20}'.format("name, birth, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10} {:>20} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial24(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Actor")
+
+    try:
+        sql = """select *
+                from actor
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10} {:>20}'.format("name, birth, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10} {:>20} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial23(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Composer")
+
+    try:
+        sql = """select *
+                from composer
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10} {:>20}'.format("name, birth, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10} {:>20} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial24(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Studio")
+
+    try:
+        sql = """select *
+                from studio
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>20} {:>10} {:>20}'.format("name, establishment, president, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>20}{:>10} {:>20} '.format(row[0], row[1], row[2], row[3])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial25(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Presidents")
+
+    try:
+        sql = """select *
+                from president
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10}{:>10} {:>20}'.format("name, birth, studio, Earliest title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10}{:>10} {:>20} '.format(row[0], row[1], row[2], row[3])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial25(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Presidents")
+
+    try:
+        sql = """select *
+                from movie
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}{:>10}'.format("title, genre, year, revenue, director, director2, producer, producer1, producer2, producer3, actor, actor1, actor2, actor3, composer, studio, review")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10}{:>10}{:>10}{:>10} {:>10}{:>10}{:>10}{:>10}{:>10} {:>10}{:>10}{:>10}{:>10}{:>10} '.format(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+
+
+
+
+
+
+
         
 def populateTables(_conn):
     populateUser(_conn)
@@ -4479,35 +4737,45 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteUserWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter valid password: ")
             deleteUserWPassword(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     elif deletion=="2":
         pathway=input("Enter command code (1-3)")
         if pathway=="1":
-            deletion_i=float(input("Enter valid number: "))
+            deletion_i=int(input("Enter valid number: "))
             deleteReviewWKey(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter name: ")
             deleteReviewWAuthor(_conn, deletion)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter movie title: ")
             deleteReviewWMovieTitle(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     elif deletion=="3":
         pathway=input("Enter command code (1-3)")
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteDirectorWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion=float(input("Enter valid year: "))
+            deletion=int(input("Enter valid year: "))
             deleteDirectorWYear(_conn, deletion)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid title: ")
             deleteDirectorWFirstFilm(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="4":
@@ -4515,12 +4783,15 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteProducerWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deleteProducerWYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid title: ")
             deleteProducerWFirstFilm(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="5":
@@ -4528,12 +4799,15 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteActorWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deleteActorWYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid title: ")
             deleteActorWFirstFilm(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="6":
@@ -4541,12 +4815,15 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteComposerWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deleteComposerWYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid title: ")
             deleteComposerWFirstFilm(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="7":
@@ -4554,31 +4831,40 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteStudioWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deleteStudioWYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid president: ")
             deleteStudioWPresident(_conn, deletion)
+            trialing(_conn)
         elif pathway=="4":
             deletion=input("Enter valid title: ")
             deleteStudioWFirstFilm(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     elif deletion=="8":
         pathway=input("Enter command code (1-4)")
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deletePresidentWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deletePresidentWYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid studio: ")
             deletePresidentWStudio(_conn, deletion)
+            trialing(_conn)
         elif pathway=="4":
-            deletion_i=float(input("Enter valid number: "))
+            deletion_i=int(input("Enter valid number: "))
             deletePresidentWYearsR(_conn, deletion_i)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="9":
@@ -4586,238 +4872,315 @@ def deleteTuple(_conn):
         if pathway=="1":
             deletion=input("Enter valid title: ")
             deleteMovieWTitle(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter valid genre: ")
             deleteMovieWGenre(_conn, deletion)
+            trialing(_conn)
         elif pathway=="3":
-            deletion_i=float(input("Enter valid year: "))
+            deletion_i=int(input("Enter valid year: "))
             deleteMovieWYear(_conn, deletion)
+            trialing(_conn)
         elif pathway=="4":
-            deletion_i=float(input("Enter valid revenue: "))
+            deletion_i=int(input("Enter valid revenue: "))
             deleteMovieWRevenue(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="5":
             deletion=input("Enter valid director: ")
             deleteMovieWDirector(_conn, deletion)
+            trialing(_conn)
         elif pathway=="6":
             deletion=input("Enter valid director: ")
             deleteMovieWDirectorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="7":
             deletion=input("Enter valid producer: ")
             deleteMovieWProducer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="8":
             deletion=input("Enter valid producer: ")
             deleteMovieWProducerTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="9":
             deletion=input("Enter valid producer: ")
             deleteMovieWProducerThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="10":
             deletion=input("Enter valid actor: ")
             deleteMovieWActor(_conn, deletion)
+            trialing(_conn)
         elif pathway=="11":
             deletion=input("Enter valid actor: ")
             deleteMovieWActorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="12":
             deletion=input("Enter valid actor: ")
             deleteMovieWActorThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="13":
             deletion=input("Enter valid composer: ")
             deleteMovieWComposer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="14":
             deletion=input("Enter valid studio: ")
             deleteMovieWStudio(_conn, deletion)
+            trialing(_conn)
         elif pathway=="15":
-            deletion=float(input("Enter valid review key: "))
+            deletion=int(input("Enter valid review key: "))
             deleteMovieWReview(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     elif deletion=="10":
         pathway=input("Enter command code (1-11): ")
         if pathway=="1":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWTitle(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWDirector(_conn, deletion)
+            trialing(_conn)
         if pathway=="3":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWDirectorTwo(_conn, deletion)
+            trialing(_conn)
         if pathway=="4":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWProducer(_conn, deletion)
+            trialing(_conn)
         if pathway=="5":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWProducerTwo(_conn, deletion)
+            trialing(_conn)
         if pathway=="6":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWProducerThree(_conn, deletion)
+            trialing(_conn)
         if pathway=="7":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWActor(_conn, deletion)
+            trialing(_conn)
         if pathway=="8":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWActorTwo(_conn, deletion)
+            trialing(_conn)
         if pathway=="9":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWActorThree(_conn, deletion)
+            trialing(_conn)
         if pathway=="10":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWComposer(_conn, deletion)
+            trialing(_conn)
         if pathway=="11":
             deletion=input("Enter valid title: ")
             deleteEarliestHereWStudio(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     elif deletion=="11":
         pathway=input("Enter command code (1-18): ")
         if pathway=="1":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWName(_conn, deletion)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWDirector(_conn, deletion)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWDirectorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="4":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWDirectorThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="5":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWDirectorFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="6":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWDirectorFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="7":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWProducer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="8":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWProducerTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="9":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWProducerThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="10":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWProducerFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="11":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWProducerFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="12":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWActor(_conn, deletion)
+            trialing(_conn)
         elif pathway=="13":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWActorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="14":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWActorThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="15":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWActorFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="16":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWActorFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="17":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWComposer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="18":
             deletion=input("Enter valid name: ")
             deleteWorkedWithWComposerTwo(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
     elif deletion=="12":
         pathway=input("Enter command code (1-29): ")
         if pathway=="1":
-            deletion_i=float(input("Enter valid number: "))
+            deletion_i=int(input("Enter valid number: "))
             deleteYear(_conn, deletion_i)
+            trialing(_conn)
         elif pathway=="2":
             deletion=input("Enter valid title: ")
             deleteYearWMovie(_conn, deletion)
+            trialing(_conn)
         elif pathway=="3":
             deletion=input("Enter valid title: ")
             deleteYearWMovieTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="4":
             deletion=input("Enter valid title: ")
             deleteYearWMovieThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="5":
             deletion=input("Enter valid title: ")
             deleteYearWMovieFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="6":
             deletion=input("Enter valid title: ")
             deleteYearWMovieFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="7":
             deletion=input("Enter valid director: ")
             deleteYearWDirector(_conn, deletion)
+            trialing(_conn)
         elif pathway=="8":
             deletion=input("Enter valid director: ")
             deleteYearWDirectorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="9":
             deletion=input("Enter valid director: ")
             deleteYearWDirectorThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="10":
             deletion=input("Enter valid director: ")
             deleteYearWDirectorFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="11":
             deletion=input("Enter valid director: ")
             deleteYearWDirectorFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="12":
             deletion=input("Enter valid producer: ")
             deleteYearWProducer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="13":
             deletion=input("Enter valid producer: ")
             deleteYearWProducerTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="14":
             deletion=input("Enter valid producer: ")
             deleteYearWProducerThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="15":
             deletion=input("Enter valid producer: ")
             deleteYearWProducerFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="16":
             deletion=input("Enter valid producer: ")
             deleteYearWProducerFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="17":
             deletion=input("Enter valid actor: ")
             deleteYearWActor(_conn, deletion)
+            trialing(_conn)
         elif pathway=="18":
             deletion=input("Enter valid actor: ")
             deleteYearWActorTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="19":
             deletion=input("Enter valid actor: ")
             deleteYearWActorThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="20":
             deletion=input("Enter valid actor: ")
             deleteYearWActorFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="21":
             deletion=input("Enter valid actor: ")
             deleteYearWActorFive(_conn, deletion)
+            trialing(_conn)
         elif pathway=="22":
             deletion=input("Enter valid number: ")
             deleteYearWComposer(_conn, deletion)
+            trialing(_conn)
         elif pathway=="23":
             deletion=input("Enter valid number: ")
             deleteYearWComposerTwo(_conn, deletion)
+            trialing(_conn)
         elif pathway=="24":
             deletion=input("Enter valid number: ")
             deleteYearWComposerThree(_conn, deletion)
+            trialing(_conn)
         elif pathway=="25":
             deletion=input("Enter valid number: ")
             deleteYearWComposerFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="26":
             deletion=input("Enter valid number: ")
             deleteYearWComposerFour(_conn, deletion)
+            trialing(_conn)
         elif pathway=="27":
             deletion=input("Enter valid number: ")
             deleteYearWPresident(_conn, deletion)
+            trialing(_conn)
         elif pathway=="28":
             deletion=input("Enter valid number: ")
             deleteYearWStudio(_conn, deletion)
+            trialing(_conn)
         elif pathway=="29":
             deletion=input("Enter valid number: ")
             deleteYearWStudioTwo(_conn, deletion)
+            trialing(_conn)
         else:
             print("ERROR: Invalid Command")
+            trialing(_conn)
     else:
         print("ERROR: Invalid command")    
+        trialing(_conn)
         
 def insertTuple(_conn):
     inserting=input("Enter command code (1-12) to add data: ")
@@ -4825,48 +5188,56 @@ def insertTuple(_conn):
         username=input("Insert username: ")
         password=input("Insert password: ")
         insertUser(_conn, username, password)
+        trialing(_conn)
     elif inserting=="2":
         reviewKey=input("Insert review key:")
         author=input("Insert author: ")
         movieTitle=input("Insert movie: ")
         insertReview(_conn, reviewKey, author, movieTitle)
+        trialing(_conn)
     elif inserting=="3":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         firstFilm=input("Insert earliest film here: ")
         insertDirector(_conn, name, year, firstFilm)
+        trialing(_conn)
     elif inserting=="4":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         firstFilm=input("Insert earliest film here: ")
         insertProducer(_conn, name, year, firstFilm)
+        trialing(_conn)
     elif inserting=="5":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         firstFilm=input("Insert earliest film here: ")
         insertActor(_conn, name, year, firstFilm)
+        trialing(_conn)
     elif inserting=="6":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         firstFilm=input("Insert earliest film here: ")
         insertComposer(_conn, name, year, firstFilm)
+        trialing(_conn)
     elif inserting=="7":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         president=input("Insert president: ")
         firstFilm=input("Insert earliest film here: ")
         insertStudio(_conn, name, year, president, firstFilm)
+        trialing(_conn)
     elif inserting=="8":
         name=input("Insert name: ")
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         studio=input("Insert studio: ")
         yearsRan=input("Insert length of run: ")
         insertPresident(_conn, name, year, studio, yearsRan)
+        trialing(_conn)
     elif inserting=="9":
         name=input("Insert name: ")
         genre=input("Insert genre: ")
-        year=float(input("Insert year: "))
-        revenue=float(input("Insert revenue: "))
+        year=int(input("Insert year: "))
+        revenue=int(input("Insert revenue: "))
         directorO=input("Insert director: ")
         directorTw=input("Insert second director (press space+enter if otherwise): ")
         producerO=input("Insert first producer: ")
@@ -4881,6 +5252,7 @@ def insertTuple(_conn):
         insertMovie(_conn, name, genre, year, revenue, directorO, directorTw, producerO,
                     producerTw, producerTr, actorO, actorTw, actorTr, composer, studio,
                     review)
+        trialing(_conn)
     elif inserting=="10":
         name=input("insert name")
         directorO=input("Insert director: ")
@@ -4895,6 +5267,7 @@ def insertTuple(_conn):
         studio=input("Insert studio: ")
         insertEarliestHere(_conn, name, directorO, directorTw, producerO,
                     producerTw, producerTr, actorO, actorTw, actorTr, composer)
+        trialing(_conn)
     elif inserting=="11":
         name=input("insert name")
         print("Press space+enter if needed\n")
@@ -4919,8 +5292,9 @@ def insertTuple(_conn):
                    directorTw, directorTr, directorFo, directorFi, producerO, producerTw, 
                    producerTr, producerFo, producerFi, actorO, actorTw, actorTr, 
                    actorFo, actorFi, composerO, composerTw)
+        trialing(_conn)
     elif inserting=="12":
-        year=float(input("Insert year: "))
+        year=int(input("Insert year: "))
         print("Press space+enter if needed\n")
         movieO=input("Insert movie:")
         movieTw=input("Insert movie:")
@@ -4955,6 +5329,7 @@ def insertTuple(_conn):
                    producerTr, producerFo, producerFi, actorO, actorTw, actorTr, 
                    actorFo, actorFi, composerO, composerTw, composerTr, composerFo, 
                    composerFi, president, studio, studioTw)
+        trialing(_conn)
         
 def updateTuple(_conn):
     updating=input("Enter command code (1-12) to edit data: ")
@@ -4964,351 +5339,530 @@ def updateTuple(_conn):
         if updating=="1":
             up=input("Enter new username: ")
             updateUserName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new password: ")
             updateUserPassword(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="2":
         name=input("Enter review key: ")
         updating=input("Enter command code (1-2): ")
         if updating=="1":
             up=input("Enter new author: ")
             updateReviewAuthor(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new movie title: ")
             updateReviewMovie(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="3":
         name=input("Enter director name: ")
         updating=input("Enter command code (1-3): ")
         if updating=="1":
-            up_i=float(input("Enter new birth year: "))
+            up_i=int(input("Enter new birth year: "))
             updateDirectorName(_conn, up_i, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new birth year: ")
             updateDirectorYear(_conn,  up, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new earliest movie title: ")
             updateDirectorFirstFilm(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="4":
         name=input("Enter producer name: ")
         updating=input("Enter command code (1-3): ")
         if updating=="1":
             up=input("Enter new name: ")
             updateProducerName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
-            up_i=float(input("Enter new birth year: "))
+            up_i=int(input("Enter new birth year: "))
             updateProducerYear(_conn, up_i, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new earliest movie title: ")
             updateProducerFirstFilm(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="5":
         name=input("Enter actor name: ")
         updating=input("Enter command code (1-3): ")
         if updating=="1":
             up=input("Enter new name: ")
             updateActorName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
-            up_i=float(input("Enter new birth year: "))
+            up_i=int(input("Enter new birth year: "))
             updateActorYear(_conn, up, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new earliest movie title: ")
             updateActorFirstFilm(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="6":
         name=input("Enter composer name: ")
         updating=input("Enter command code (1-3): ")
         if updating=="1":
             up=input("Enter new name:")
             updateComposerName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
-            up_i=float(input("Enter new birth year: "))
+            up_i=int(input("Enter new birth year: "))
             updateComposerYear(_conn, up_i, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new earliest movie title: ")
             updateComposerFirstFilm(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="7":
         name=input("Enter studio name: ")
         updating=input("Enter command code (1-4): ")
         if updating=="1":
             up=input("Enter new name: ")
             updateStudioName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
-            up_i=float(input("Enter new founding year: "))
+            up_i=int(input("Enter new founding year: "))
             updateStudioName(_conn, up_i, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new president: ")
             updateStudioPresident(_conn, up, name)
+            trialing(_conn)
         elif updating=="4":
             up=input("Enter new earliest film: ")
             updateStudioFirstFilm(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="8":
         name=input("Enter president name: ")
         updating=input("Enter command code (1-4): ")
         if updating=="1":
             up=input("Enter new name: ")
             updatePresidentName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
-            up_i=float(input("Enter new birth year: "))
+            up_i=int(input("Enter new birth year: "))
             updatePresidentYear(_conn, up_i, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new studio: ")
             updatePresidentStudio(_conn, up, name)
+            trialing(_conn)
         elif updating=="4":
-            up_i=float(input("Enter new run length: "))
+            up_i=int(input("Enter new run length: "))
             updatePresidentYearsRan(_conn, up_i, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="9":
         name=input("Enter movie name: ")
         updating=input("Enter command code (1-15): ")
         if updating=="1":
             up=input("Enter new title: ")
             updateMovieTitle(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new genre: ")
             updateMovieGenre(_conn, up, name)
+            trialing(_conn)
         elif updating=="3":
-            up_i=float(input("Enter new release year: "))
+            up_i=int(input("Enter new release year: "))
             updateMovieYear(_conn, up, name)
+            trialing(_conn)
         elif updating=="4":
-            up_i=float(input("Enter new revenue: "))
+            up_i=int(input("Enter new revenue: "))
             updateMovieRevenue(_conn, up, name)
+            trialing(_conn)
         elif updating=="5":
             up=input("Enter new director: ")
             updateMovieDirector(_conn, up, name)
+            trialing(_conn)
         elif updating=="6":
             up=input("Enter new director (space+enter if needed): ")
             updateMovieDirectorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="7":
             up=input("Enter new actor: ")
             updateMovieActor(_conn, up, name)
+            trialing(_conn)
         elif updating=="8":
             up=input("Enter new actor (space+enter if needed): ")
             updateMovieActorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="9":
             up=input("Enter new actor (space+enter if needed): ")
             updateMovieActorThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="10":
             up=input("Enter new producer: ")
             updateMovieProducer(_conn, up, name)
+            trialing(_conn)
         elif updating=="11":
             up=input("Enter new producer (space+enter if needed): ")
             updateMovieProducerTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="12":
             up=input("Enter new producer (space+enter if needed): ")
             updateMovieProducerThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="13":
             up=input("Enter new composer: ")
             updateMovieComposer(_conn, up, name)
+            trialing(_conn)
         elif updating=="14":
             up=input("Enter new studio: ")
             updateMovieStudio(_conn, up, name)
+            trialing(_conn)
         elif updating=="15":
             up=input("Enter new review key: ")
             updateMovieReview(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="10":
         name=input("Enter earliest film record name: ")
         updating=input("Enter command code (1-11): ")
         if updating=="1":
             up=input("Enter new title: ")
             updateEarliestHereTitle(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new director: ")
             updateEarliestHereDirector(_conn, up, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new director: ")
             updateEarliestHereDirectorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="4":
             up=input("Enter new producer: ")
             updateEarliestHereProducer(_conn, up, name)
+            trialing(_conn)
         elif updating=="5":
             up=input("Enter new producer: ")
             updateEarliestHereProducerTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="6":
             up=input("Enter new producer: ")
             updateEarliestHereProducerThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="7":
             up=input("Enter new actor: ")
             updateEarliestHereActor(_conn, up, name)
+            trialing(_conn)
         elif updating=="8":
             up=input("Enter new actor: ")
             updateEarliestHereActorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="9":
             up=input("Enter new actor: ")
             updateEarliestHereActorThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="10":
             up=input("Enter new composer: ")
             updateEarliestHereComposer(_conn, up, name)
+            trialing(_conn)
         elif updating=="11":
             up=input("Enter new studio: ")
             updateEarliestHereStudio(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="11":
         name=input("Enter person's name: ")
         updating=input("Enter command code (1-18): ")
         if updating=="1":
             up=input("Enter new name: ")
             updateWorkedWithName(_conn, up, name)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new director: ")
             updateWorkedWithDirector(_conn, up, name)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new director: ")
             updateWorkedWithDirectorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="4":
             up=input("Enter new director: ")
             updateWorkedWithDirectorThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="5":
             up=input("Enter new director: ")
             updateWorkedWithDirectorFour(_conn, up, name)
+            trialing(_conn)
         elif updating=="6":
             up=input("Enter new director: ")
             updateWorkedWithDirectorFive(_conn, up, name)
+            trialing(_conn)
         elif updating=="7":
             up=input("Enter new producer: ")
             updateWorkedWithProducer(_conn, up, name)
+            trialing(_conn)
         elif updating=="8":
             up=input("Enter new producer: ")
             updateWorkedWithProducerTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="9":
             up=input("Enter new producer: ")
             updateWorkedWithProducerThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="10":
             up=input("Enter new producer: ")
             updateWorkedWithProducerFour(_conn, up, name)
+            trialing(_conn)
         elif updating=="11":
             up=input("Enter new producer: ")
             updateWorkedWithProducerFive(_conn, up, name)
+            trialing(_conn)
         elif updating=="12":
             up=input("Enter new actor: ")
             updateWorkedWithActor(_conn, up, name)
+            trialing(_conn)
         elif updating=="13":
             up=input("Enter new actor: ")
             updateWorkedWithActorTwo(_conn, up, name)
+            trialing(_conn)
         elif updating=="14":
             up=input("Enter new actor: ")
             updateWorkedWithActorThree(_conn, up, name)
+            trialing(_conn)
         elif updating=="15":
             up=input("Enter new actor: ")
             updateWorkedWithActorFour(_conn, up, name)
+            trialing(_conn)
         elif updating=="16":
             up=input("Enter new actor: ")
             updateWorkedWithActorFive(_conn, up, name)
+            trialing(_conn)
         elif updating=="17":
             up=input("Enter new composer: ")
             updateWorkedWithComposer(_conn, up, name)
+            trialing(_conn)
         elif updating=="18":
             up=input("Enter new composer: ")
             updateWorkedWithComposerTwo(_conn, up, name)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     if updating=="12":
-        year=float(input("Enter year: "))
+        year=int(input("Enter year: "))
         updating=input("Enter command code (1-28): ") 
         if updating=="1":
             up=input("Enter new movie: ")
             updateYearMovie(_conn, up, year)
+            trialing(_conn)
         elif updating=="2":
             up=input("Enter new movie: ")
             updateYearMovieTwo(_conn, up, year)
+            trialing(_conn)
         elif updating=="3":
             up=input("Enter new movie: ")
             updateYearMovieThree(_conn, up, year)
+            trialing(_conn)
         elif updating=="4":
             up=input("Enter new movie: ")
             updateYearMovieFour(_conn, up, year)
+            trialing(_conn)
         elif updating=="5":
             up=input("Enter new movie: ")
             updateYearMovieFive(_conn, up, year)
+            trialing(_conn)
         elif updating=="6":
             up=input("Enter new director: ")
             updateYearDirector(_conn, up, year)
+            trialing(_conn)
         elif updating=="7":
             up=input("Enter new director: ")
             updateYearDirectorTwo(_conn, up, year)
+            trialing(_conn)
         elif updating=="8":
             up=input("Enter new director: ")
             updateYearDirectorThree(_conn, up, year)
+            trialing(_conn)
         elif updating=="9":
             up=input("Enter new director: ")
             updateYearDirectorFour(_conn, up, year)
+            trialing(_conn)
         elif updating=="10":
             up=input("Enter new director: ")
             updateYearDirectorFive(_conn, up, year)
+            trialing(_conn)
         elif updating=="11":
             up=input("Enter new producer: ")
             updateYearProducer(_conn, up, year)
+            trialing(_conn)
         elif updating=="12":
             up=input("Enter new producer: ")
             updateYearProducerTwo(_conn, up, year)
+            trialing(_conn)
         elif updating=="13":
             up=input("Enter new producer: ")
             updateYearProducerThree(_conn, up, year)
+            trialing(_conn)
         elif updating=="14":
             up=input("Enter new producer: ")
             updateYearProducerFour(_conn, up, year)
+            trialing(_conn)
         elif updating=="15":
             up=input("Enter new producer: ")
             updateYearProducerFive(_conn, up, year)
+            trialing(_conn)
         elif updating=="16":
             up=input("Enter new actor: ")
             updateYearActor(_conn, up, year)
+            trialing(_conn)
         elif updating=="17":
             up=input("Enter new actor: ")
             updateYearActorTwo(_conn, up, year)
+            trialing(_conn)
         elif updating=="18":
             up=input("Enter new actor: ")
             updateYearActorThree(_conn, up, year)
+            trialing(_conn)
         elif updating=="19":
             up=input("Enter new actor: ")
             updateYearActorFour(_conn, up, year)
+            trialing(_conn)
         elif updating=="20":
             up=input("Enter new actor: ")
             updateYearActorFive(_conn, up, year)
+            trialing(_conn)
         elif updating=="21":
             up=input("Enter new composer: ")
             updateYearComposer(_conn, up, year)
+            trialing(_conn)
         elif updating=="22":
             up=input("Enter new composer: ")
             updateYearComposer(_conn, up, year)
+            trialing(_conn)
         elif updating=="23":
             up=input("Enter new composer: ")
             updateYearComposer(_conn, up, year)
+            trialing(_conn)
         elif updating=="24":
             up=input("Enter new composer: ")
             updateYearComposer(_conn, up, year)
+            trialing(_conn)
         elif updating=="25":
             up=input("Enter new composer: ")
             updateYearComposer(_conn, up, year)
+            trialing(_conn)
         elif updating=="26":
             up=input("Enter new president: ")
             updateYearPresident(_conn, up, year)
+            trialing(_conn)
         elif updating=="27":
             up=input("Enter new studio: ")
             updateYearStudio(_conn, up, year)
+            trialing(_conn)
         elif updating=="28":
             up=input("Enter new studio: ")
             updateYearStudioTwo(_conn, up, year)
+            trialing(_conn)
         else: 
             print("ERROR: Invalid command")
+            trialing(_conn)
     else: 
         print("ERROR: Invalid command")
+        trialing(_conn)
+
+def trialing(_conn):
         
+        trials=input("Enter command code (1-20, I/D/U/E): ")
+        
+        if trials=='1':
+            enter_i=int(input("Enter a number: "))
+            trial1(_conn, enter_i)
+        elif trials=='2':
+            enter=input("Enter a reviewer: ")
+            trial2(_conn, enter)
+        elif trials=='3':
+            trial3(_conn)
+        elif trials=='4':
+            trial4(_conn)
+        elif trials=='5':
+            trial5(_conn)
+        elif trials=='6':
+            enter_i=int(input("Enter a number: "))
+            trial6(_conn, enter_i)
+        elif trials=='7':
+            trial7(_conn)
+        elif trials=='8':
+            enter=input("Enter a director: ")
+            trial8(_conn, enter)
+        elif trials=='9':
+            trial9(_conn)
+        elif trials=='10':
+            trial10(_conn)
+        elif trials=='11':
+            trial11(_conn)
+        elif trials=='12':
+            trial12(_conn)
+        elif trials=='13':
+            trial13(_conn)
+        elif trials=='14':
+            trial14(_conn)
+        elif trials=='15':
+            trial15(_conn)
+        elif trials=='16':
+            trial16(_conn)
+        elif trials=='17':
+            trial17(_conn)
+        elif trials=='18':
+            trial18(_conn)
+        elif trials=='19':
+            trial19(_conn)
+        elif trials=='20':
+            trial20(_conn)
+        elif trials=='21':
+            trial21(_conn)
+        elif trials=='22':
+            trial22(_conn)
+        elif trials=='23':
+            trial23(_conn)
+        elif trials=='24':
+            trial24(_conn)
+        elif trials=='25':
+            trial25(_conn)
+        elif trials=='I':
+            insertTuple(_conn)
+        elif trials=="U":
+            updateTuple(_conn)
+        elif trials=='D':
+            deleteTuple(_conn)
+        elif trials=='E':
+            print("Thank you. Have a nice day")
+        else:
+            print("ERROR: Invalid command")
+            trialing(_conn)
+            
             
 def main():
     database = r"project.sqlite"
@@ -5319,61 +5873,8 @@ def main():
         dropTables(conn)
         createTables(conn)
         populateTables(conn)
+        trialing(conn)
         
-        trials=input("Enter command code (1-20, I/D): ")
-        
-        if trials=='1':
-            enter_i=float(input("Enter a number: "))
-            trial1(conn, enter_i)
-        elif trials=='2':
-            enter=input("Enter a reviewer: ")
-            trial2(conn, enter)
-        elif trials=='3':
-            trial3(conn)
-        elif trials=='4':
-            trial4(conn)
-        elif trials=='5':
-            trial5(conn)
-        elif trials=='6':
-            enter_i=float(input("Enter a number: "))
-            trial6(conn, enter_i)
-        elif trials=='7':
-            trial7(conn)
-        elif trials=='8':
-            enter=input("Enter a director: ")
-            trial8(conn, enter)
-        elif trials=='9':
-            trial9(conn)
-        elif trials=='10':
-            trial10(conn)
-        elif trials=='11':
-            trial11(conn)
-        elif trials=='12':
-            trial12(conn)
-        elif trials=='13':
-            trial13(conn)
-        elif trials=='14':
-            trial14(conn)
-        elif trials=='15':
-            trial15(conn)
-        elif trials=='16':
-            trial16(conn)
-        elif trials=='17':
-            trial17(conn)
-        elif trials=='18':
-            trial18(conn)
-        elif trials=='19':
-            trial19(conn)
-        elif trials=='20':
-            trial20(conn)
-        elif trials=='I':
-            insertTuple(conn)
-        elif trials=="U":
-            updateTuple(conn)
-        elif trials=='D':
-            deleteTuple(conn)
-        else:
-            print("ERROR: Invalid command")
         
 
     closeConnection(conn, database)
