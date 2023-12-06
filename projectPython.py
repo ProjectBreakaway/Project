@@ -3885,7 +3885,7 @@ def updateYearStudioTwo(_conn, _up1, _up2):
 
 def trial1(_conn, _in):
     print("++++++++++++++++++++++++++++++++++")
-    print("Genres with films with less than a million in revenue: ")
+    print("Genres with films with less than a certain amount in revenue: ")
 
     try:
         sql = """select m_genre
