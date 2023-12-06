@@ -4500,10 +4500,188 @@ def trial21(_conn):
 
     print("++++++++++++++++++++++++++++++++++")
     trialing(_conn)
+def trial22(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Reviews")
 
+    try:
+        sql = """select *
+                from review
+                """
 
+        cur = _conn.cursor()
+        cur.execute(sql)
 
+        l = '{:>10} {:>10} {:>10}'.format("review", "author", "movie")
+        print(l)
+        print("-------------------------------")
 
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10} {:>10}'.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial23(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Directors")
+
+    try:
+        sql = """select *
+                from director
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10}{:>10}'.format("Name", "Birth Year", "Earliest Title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10}{:>10} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial24(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Producers")
+
+    try:
+        sql = """select *
+                from producer
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10} {:>10}'.format("Name", "Birth Year", "Earliest Title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10} {:>10}'.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial25(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Actors")
+
+    try:
+        sql = """select *
+                from actor
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10}{:>10}'.format("Name", "Birth Year", "Earliest Title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10}{:>10} '.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial26(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Composers")
+
+    try:
+        sql = """select *
+                from composer
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10} {:>10}'.format("Name", "Birth Year", "Earliest Title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10} {:>10}'.format(row[0], row[1], row[2])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial27(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Studios")
+
+    try:
+        sql = """select *
+                from studio
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10}{:>10}{:>10}{:>10}'.format("Name", "Founding Date", "President", "Earliest Title")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10}{:>10}{:>10}{:>10} '.format(row[0], row[1], row[2], row[3])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
+def trial28(_conn):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Presidents")
+
+    try:
+        sql = """select *
+                from president
+                """
+
+        cur = _conn.cursor()
+        cur.execute(sql)
+
+        l = '{:>10} {:>10} {:>10}{:>10}'.format("Name", "Birth Year", "Studio", "Years Ran")
+        print(l)
+        print("-------------------------------")
+
+        rows = cur.fetchall()
+        for row in rows:
+            l = '{:>10} {:>10} {:>10}{:>10}'.format(row[0], row[1], row[2], row[3])
+            print(l)
+
+    except Error as e:
+        print(e)
+
+    print("++++++++++++++++++++++++++++++++++")
+    trialing(_conn)
 
 
         
@@ -5586,7 +5764,7 @@ def updateTuple(_conn):
 
 def trialing(_conn):
         
-        trials=input("Enter command code (1-21, I/D/U/E): ")
+        trials=input("Enter command code (1-29, I/D/U/E): ")
         
         if trials=='1':
             enter_i=int(input("Enter a number: "))
@@ -5634,6 +5812,20 @@ def trialing(_conn):
             trial20(_conn)
         elif trials=='21':
             trial21(_conn)
+        elif trials=='22':
+            trial22(_conn)
+        elif trials=='23':
+            trial23(_conn)
+        elif trials=='24':
+            trial24(_conn)
+        elif trials=='25':
+            trial25(_conn)
+        elif trials=='26':
+            trial26(_conn)
+        elif trials=='27':
+            trial27(_conn)
+        elif trials=='28':
+            trial28(_conn)
         elif trials=='I':
             insertTuple(_conn)
         elif trials=="U":
@@ -5653,9 +5845,9 @@ def main():
     # create a database connection
     conn = openConnection(database)
     with conn:
-        dropTables(conn)
-        createTables(conn)
-        populateTables(conn)
+        #dropTables(conn)
+        #createTables(conn)
+        #populateTables(conn)
         trialing(conn)
         
         
