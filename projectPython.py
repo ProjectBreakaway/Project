@@ -5845,9 +5845,9 @@ def main():
     # create a database connection
     conn = openConnection(database)
     with conn:
-        #dropTables(conn)
-        #createTables(conn)
-        #populateTables(conn)
+        dropTables(conn)
+        createTables(conn)
+        populateTables(conn)
         trialing(conn)
         
         
