@@ -4684,7 +4684,7 @@ def trial25(_conn):
     trialing(_conn)
 def trial25(_conn):
     print("++++++++++++++++++++++++++++++++++")
-    print("Presidents")
+    print("Movies")
 
     try:
         sql = """select *
