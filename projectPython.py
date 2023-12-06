@@ -5586,7 +5586,7 @@ def updateTuple(_conn):
 
 def trialing(_conn):
         
-        trials=input("Enter command code (1-25, I/D/U/E): ")
+        trials=input("Enter command code (1-21, I/D/U/E): ")
         
         if trials=='1':
             enter_i=int(input("Enter a number: "))
